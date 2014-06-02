@@ -1,4 +1,4 @@
-QGIS-Processing
-===============
+QGIS resources repository
+===========================
 
-Example scripts, algorithms etc 
+A repository with scripts and models downloadable from the Processing toolbox

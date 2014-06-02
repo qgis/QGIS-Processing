@@ -1,0 +1,1 @@
+{"ALG_DESC": "Cut one layer by the other for features that share a common value in specified fields. Keep the inside of the first layer", "Cut_Key_Field": "Field that contains the shared value with cut polygons", "ALG_CREATOR": "Chourmo - v1", "Key_Field": "Field that contains the shared value with cutting polygons", "ALG_HELP_CREATOR": "Chourmo - v1", "Polygons": ""}
