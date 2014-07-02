@@ -1,0 +1,166 @@
+{
+    "values": {
+        "inputs": {
+            "RASTERLAYER_R1": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 104.0, 
+                            "x": 146.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_R1", 
+                            "hidden": false, 
+                            "description": "r1", 
+                            "optional": false, 
+                            "value": null, 
+                            "exported": null
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "RASTERLAYER_R3": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 233.0, 
+                            "x": 501.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_R3", 
+                            "hidden": false, 
+                            "description": "r3", 
+                            "optional": false, 
+                            "value": null, 
+                            "exported": null
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "RASTERLAYER_R2": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 105.0, 
+                            "x": 400.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_R2", 
+                            "hidden": false, 
+                            "description": "r2", 
+                            "optional": false, 
+                            "value": null, 
+                            "exported": null
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }
+        }, 
+        "group": "Example models", 
+        "name": "Model within a model", 
+        "algs": {
+            "MODELERMULT_1": {
+                "values": {
+                    "name": "MODELERMULT_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 278.0, 
+                            "x": 224.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "RASTERLAYER_R1": {
+                            "values": {
+                                "name": "RASTERLAYER_R1"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "RASTERLAYER_R2": {
+                            "values": {
+                                "name": "RASTERLAYER_R2"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "modeler:mult", 
+                    "description": "Mulltiply 2 layers"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "MODELERMULT_2": {
+                "values": {
+                    "name": "MODELERMULT_2", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "RESULT_ALGSAGARASTERCALCULATOR_1": {
+                            "values": {
+                                "description": "out", 
+                                "pos": {
+                                    "values": {
+                                        "y": 463.0, 
+                                        "x": 217.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 378.0, 
+                            "x": 444.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "RASTERLAYER_R1": {
+                            "values": {
+                                "alg": "MODELERMULT_1", 
+                                "output": "RESULT_ALGSAGARASTERCALCULATOR_1"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "RASTERLAYER_R2": {
+                            "values": {
+                                "name": "RASTERLAYER_R3"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "modeler:mult", 
+                    "description": "Mulltiply 2 layers"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

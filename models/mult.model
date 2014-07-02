@@ -1,0 +1,110 @@
+{
+    "values": {
+        "inputs": {
+            "RASTERLAYER_R1": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 91.0, 
+                            "x": 158.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_R1", 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "r1"
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "RASTERLAYER_R2": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 190.0, 
+                            "x": 399.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_R2", 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "r2"
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }
+        }, 
+        "group": "Example models", 
+        "name": "Mulltiply 2 layers", 
+        "algs": {
+            "SAGARASTERCALCULATOR_1": {
+                "values": {
+                    "name": "SAGARASTERCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "RESULT": {
+                            "values": {
+                                "description": "out", 
+                                "pos": {
+                                    "values": {
+                                        "y": 443.0, 
+                                        "x": 504.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 332.0, 
+                            "x": 279.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "FORMULA": "a*b", 
+                        "XGRIDS": [
+                            {
+                                "values": {
+                                    "name": "RASTERLAYER_R1"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            }, 
+                            {
+                                "values": {
+                                    "name": "RASTERLAYER_R2"
+                                }, 
+                                "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                            }
+                        ]
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:rastercalculator", 
+                    "description": "Raster calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

@@ -1,0 +1,178 @@
+{
+    "values": {
+        "inputs": {
+            "VECTORLAYER_POINTS": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 47.0, 
+                            "x": 147.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_POINTS", 
+                            "shapetype": [
+                                0
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "points"
+                        }, 
+                        "class": "processing.parameters.ParameterVector.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "TABLEFIELD_FIELD": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 47.0, 
+                            "x": 402.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "TABLEFIELD_FIELD", 
+                            "parent": "VECTORLAYER_POINTS", 
+                            "datatype": -1, 
+                            "value": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "field"
+                        }, 
+                        "class": "processing.parameters.ParameterTableField.ParameterTableField"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "NUMBER_CELLSIZE": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 130.0, 
+                            "x": 499.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_CELLSIZE", 
+                            "min": 0.0, 
+                            "default": 100.0, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": false, 
+                            "description": "cellsize"
+                        }, 
+                        "class": "processing.parameters.ParameterNumber.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }
+        }, 
+        "group": "Example models", 
+        "name": "Rasterize and fill", 
+        "algs": {
+            "SAGACLOSEGAPS_1": {
+                "values": {
+                    "name": "SAGACLOSEGAPS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "RESULT": {
+                            "values": {
+                                "description": "result", 
+                                "pos": {
+                                    "values": {
+                                        "y": 454.0, 
+                                        "x": 458.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 418.0, 
+                            "x": 213.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "THRESHOLD": 0.1, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "SAGASHAPESTOGRID_1", 
+                                "output": "USER_GRID"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "MASK": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:closegaps", 
+                    "description": "Close gaps"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGASHAPESTOGRID_1": {
+                "values": {
+                    "name": "SAGASHAPESTOGRID_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 292.0, 
+                            "x": 222.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "OUTPUT_EXTENT": null, 
+                        "MULTIPLE": 0, 
+                        "FIELD": {
+                            "values": {
+                                "name": "TABLEFIELD_FIELD"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "LINE_TYPE": 0, 
+                        "USER_SIZE": {
+                            "values": {
+                                "name": "NUMBER_CELLSIZE"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INPUT": {
+                            "values": {
+                                "name": "VECTORLAYER_POINTS"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRID_TYPE": 3
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:shapestogrid", 
+                    "description": "Shapes to grid"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}

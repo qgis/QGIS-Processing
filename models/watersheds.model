@@ -1,0 +1,218 @@
+{
+    "values": {
+        "inputs": {
+            "RASTERLAYER_DEM": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 53.0, 
+                            "x": 191.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "RASTERLAYER_DEM", 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "dem"
+                        }, 
+                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }, 
+            "NUMBER_THRESHOLD": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 131.0, 
+                            "x": 351.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_THRESHOLD", 
+                            "min": 0.0, 
+                            "default": 0.0, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": false, 
+                            "description": "threshold"
+                        }, 
+                        "class": "processing.parameters.ParameterNumber.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Input"
+            }
+        }, 
+        "group": "Example models", 
+        "name": "Watersheds from DEM and threshold", 
+        "algs": {
+            "SAGAWATERSHEDBASINS_1": {
+                "values": {
+                    "name": "SAGAWATERSHEDBASINS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 388.0, 
+                            "x": 467.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "CHANNELS": {
+                            "values": {
+                                "alg": "SAGACHANNELNETWORK_1", 
+                                "output": "CHNLNTWRK"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "SINKROUTE": null, 
+                        "ELEVATION": {
+                            "values": {
+                                "name": "RASTERLAYER_DEM"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "MINSIZE": 0.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:watershedbasins", 
+                    "description": "Watershed basins"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GDALOGRPOLYGONIZE_1": {
+                "values": {
+                    "name": "GDALOGRPOLYGONIZE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "watersheds", 
+                                "pos": {
+                                    "values": {
+                                        "y": 595.0, 
+                                        "x": 167.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 499.0, 
+                            "x": 363.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "SAGAWATERSHEDBASINS_1", 
+                                "output": "BASINS"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "FIELD": "ws"
+                    }, 
+                    "active": true, 
+                    "consoleName": "gdalogr:polygonize", 
+                    "description": "Polygonize (raster to vector)"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGACATCHMENTAREA_1": {
+                "values": {
+                    "name": "SAGACATCHMENTAREA_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 160.0, 
+                            "x": 120.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "ELEVATION": {
+                            "values": {
+                                "name": "RASTERLAYER_DEM"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "Method": 0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:catchmentarea", 
+                    "description": "Catchment Area"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGACHANNELNETWORK_1": {
+                "values": {
+                    "name": "SAGACHANNELNETWORK_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 288.0, 
+                            "x": 247.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INIT_GRID": {
+                            "values": {
+                                "alg": "SAGACATCHMENTAREA_1", 
+                                "output": "CAREA"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "TRACE_WEIGHT": null, 
+                        "ELEVATION": {
+                            "values": {
+                                "name": "RASTERLAYER_DEM"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "MINLEN": 10.0, 
+                        "DIV_GRID": null, 
+                        "INIT_VALUE": {
+                            "values": {
+                                "name": "NUMBER_THRESHOLD"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INIT_METHOD": 2, 
+                        "SINKROUTE": null, 
+                        "DIV_CELLS": 10.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:channelnetwork", 
+                    "description": "Channel network"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
