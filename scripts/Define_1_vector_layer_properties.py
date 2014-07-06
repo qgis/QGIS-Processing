@@ -1,4 +1,4 @@
-##[3liz - Vector]=group
+##Vector=group
 ##Define 1 vector layer properties=name
 ##Vector_layer=vector
 ##QML_file=file

@@ -1,4 +1,4 @@
-##[3liz - Raster]=group
+##Raster=group
 ##Set multiple raster layers properties=name
 ##Raster_layers=multiple raster
 ##QML_file=file

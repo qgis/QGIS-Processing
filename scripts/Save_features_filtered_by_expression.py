@@ -1,4 +1,4 @@
-##[3liz - Vector]=group
+##Vector_layer=group
 ##Save features filtered by expression=name
 ##Vector_layer=vector
 ##Expression=longstring

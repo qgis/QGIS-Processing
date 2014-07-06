@@ -1,4 +1,4 @@
-##[3liz - Database]=group
+##Database=group
 ##Create vector layer from SQL Query=name
 ##Database_type=selection postgis;spatialite
 ##Connection_name=string

@@ -1,4 +1,4 @@
-##[3liz - Database]=group
+##Database=group
 ##Create vector layer from postgis table=name
 ##Host=string localhost
 ##Port=number 5432

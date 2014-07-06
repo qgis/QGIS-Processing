@@ -1,4 +1,4 @@
-##Points=vector
+##Points=vector point
 ##Value_field=field Points
 ##Levels=string 10;20
 ##Buffer_parameter=number 60

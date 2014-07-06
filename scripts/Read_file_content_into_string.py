@@ -1,4 +1,4 @@
-##[3liz - String]=group
+##Utils=group
 ##Read file content into string=name
 ##Source_file=file
 ##output=output string
@@ -10,6 +10,6 @@ string = ""
 with open(Source_file, 'r') as f:
     string = f.read(10485760)
 
-progress.setText('<b>First 1000 characters of the output string: </b></br>%s' % string[:1000])
+progress.setInfo('<b>First 1000 characters of the output string: </b></br>%s' % string[:1000])
 
 output = string
