@@ -29,3 +29,4 @@ Split_vector_layer_by_attribute.py,1,Split vector layer by attribute
 Square_grid_from_layer_extent.py,1.01,Square grid from layer extent
 Summarize.py,1,Summarize
 Unique_values_count.py,1,Unique values count
+Frequency_analysis.py,1,Frequency analysis
