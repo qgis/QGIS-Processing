@@ -1,4 +1,4 @@
-##Assing predominant category=name
+##Assigning predominant category=name
 ##Polygons=group
 ##layera=vector polygon
 ##layerb=vector polygon
