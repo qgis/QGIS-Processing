@@ -1,4 +1,4 @@
-##Assigning predominant category=name
+##Assing predominant category=name
 ##Polygons=group
 ##layera=vector polygon
 ##layerb=vector polygon
@@ -30,23 +30,27 @@ fields.append(QgsField(vector.createUniqueFieldName('MAJ', fieldsa), fieldsb.fie
 writer = VectorWriter(output, None, fields, QGis.WKBMultiPolygon, layera.crs())
 outFeat = QgsFeature()
 index = vector.spatialindex(layerb)
-featuresa = vector.features(layera)
+featuresa = list(layera.getFeatures())
 nfeat = len(featuresa)
+nprogress = 1 / float(nfeat) * 100
 try:
     for n, feat in enumerate(featuresa):
-        progress.setPercentage(n/ float(nfeat) * 100)
-        geom = QgsGeometry(feat.geometry())
+        geom = feat.geometry()
         attrs = feat.attributes()
         intersects = index.intersects(geom.boundingBox())
         maxArea = -1
         cat = None
-        for i in intersects:
+        nintersects = len(intersects)
+        for m, i in enumerate(intersects):
+            progress.setPercentage((nprogress * n) + (nprogress * (m / float(nintersects))))
             request = QgsFeatureRequest().setFilterFid(i)
             featb = layerb.getFeatures(request).next()
             tmpGeom = featb.geometry()
             if geom.intersects(tmpGeom):
-                intGeom = QgsGeometry(geom.intersection(tmpGeom))
-                area =intGeom.area()
+                intGeom = geom.intersection(tmpGeom)
+                if not intGeom:
+                    continue
+                area = intGeom.area()
                 if area > maxArea:
                     maxArea = area
                     cat = featb.attributes()[fieldIdx]
