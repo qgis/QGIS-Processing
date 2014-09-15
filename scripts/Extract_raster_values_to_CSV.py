@@ -6,7 +6,7 @@
 
 import os
 from osgeo import gdal, ogr, osr
-from processing.core.TableWriter import TableWriter
+from processing.tools.vector import TableWriter
 from processing.core.GeoAlgorithmExecutionException import \
         GeoAlgorithmExecutionException
 from processing.tools.raster import *
@@ -85,7 +85,7 @@ for i in xrange(bandCount):
             pnt = coordTransform.TransformPoint(x, y, 0)
             x = pnt[0]
             y = pnt[1]
-        (rX, rY) = raster.mapToPixel(x, y, geoTransform)
+        (rX, rY) = mapToPixel(x, y, geoTransform)
         if rX >= rasterXSize or rY >= rasterYSize:
             feature = layer.GetNextFeature()
             continue
