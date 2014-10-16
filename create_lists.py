@@ -18,14 +18,13 @@ if __name__ == '__main__':
         if not os.path.exists(helpFile):
             version = 1
         else:
-            with open(helpFile) as f:
-                helpContent = json.load(f)
+            with open(helpFile) as f:                
                 try:
+                    helpContent = json.load(f)
                     version = float(helpContent["ALG_VERSION"])
                 except:
                     version = 1
         scripts.append('%s,%s,%s' % (basename, version, name))
-        print scripts
     with open('scripts/list.txt', 'w') as f:
         f.write('\n'.join(scripts))
 		
