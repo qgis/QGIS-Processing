@@ -20,10 +20,10 @@
                             "optional": false, 
                             "description": "r1"
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "RASTERLAYER_R2": {
                 "values": {
@@ -44,10 +44,10 @@
                             "optional": false, 
                             "description": "r2"
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "group": "Example models", 
@@ -69,7 +69,7 @@
                                     "class": "point"
                                 }
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
                     "outputsFolded": true, 

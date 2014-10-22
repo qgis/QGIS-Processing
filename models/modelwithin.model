@@ -20,10 +20,10 @@
                             "value": null, 
                             "exported": null
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "RASTERLAYER_R3": {
                 "values": {
@@ -44,10 +44,10 @@
                             "value": null, 
                             "exported": null
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "RASTERLAYER_R2": {
                 "values": {
@@ -68,10 +68,10 @@
                             "value": null, 
                             "exported": null
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "group": "Example models", 
@@ -127,7 +127,7 @@
                                     "class": "point"
                                 }
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
                     "outputsFolded": true, 

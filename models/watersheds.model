@@ -20,10 +20,10 @@
                             "optional": false, 
                             "description": "dem"
                         }, 
-                        "class": "processing.parameters.ParameterRaster.ParameterRaster"
+                        "class": "processing.core.parameters.ParameterRaster"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "NUMBER_THRESHOLD": {
                 "values": {
@@ -46,10 +46,10 @@
                             "isInteger": false, 
                             "description": "threshold"
                         }, 
-                        "class": "processing.parameters.ParameterNumber.ParameterNumber"
+                        "class": "processing.core.parameters.ParameterNumber"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "group": "Example models", 
@@ -108,7 +108,7 @@
                                     "class": "point"
                                 }
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
                     "outputsFolded": true, 

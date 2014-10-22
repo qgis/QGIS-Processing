@@ -23,10 +23,10 @@
                             "optional": false, 
                             "description": "points"
                         }, 
-                        "class": "processing.parameters.ParameterVector.ParameterVector"
+                        "class": "processing.core.parameters.ParameterVector"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "TABLEFIELD_FIELD": {
                 "values": {
@@ -48,10 +48,10 @@
                             "optional": false, 
                             "description": "field"
                         }, 
-                        "class": "processing.parameters.ParameterTableField.ParameterTableField"
+                        "class": "processing.core.parameters.ParameterTableField"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }, 
             "NUMBER_CELLSIZE": {
                 "values": {
@@ -74,10 +74,10 @@
                             "isInteger": false, 
                             "description": "cellsize"
                         }, 
-                        "class": "processing.parameters.ParameterNumber.ParameterNumber"
+                        "class": "processing.core.parameters.ParameterNumber"
                     }
                 }, 
-                "class": "processing.modeler.ModelerAlgorithm.Input"
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
             }
         }, 
         "group": "Example models", 
@@ -99,7 +99,7 @@
                                     "class": "point"
                                 }
                             }, 
-                            "class": "processing.modeler.ModelerAlgorithm.Output"
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
                         }
                     }, 
                     "outputsFolded": true, 

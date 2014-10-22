@@ -1,4 +1,4 @@
-mult.model,1,Multiply 2 layers
-rasterizeandfill.model,1,Rasterize and fill
-watersheds.model,1,Watersheds from DEM and threshold
-modelwithin.model,1,Model within a model
+mult.model,2.6,Multiply 2 layers
+rasterizeandfill.model,2.6,Rasterize and fill
+watersheds.model,2.6,Watersheds from DEM and threshold
+modelwithin.model,2.6,Model within a model
