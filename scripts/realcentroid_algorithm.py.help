@@ -1,0 +1,22 @@
+(dp0
+S'ALG_CREATOR'
+p1
+VZoltan Siki
+p2
+sS'output'
+p3
+Vpoint layer (pointOnSurface)
+p4
+sS'ALG_DESC'
+p5
+VThis script generates at internal point of the polygons in a vector layer aka pointOnSurface (GEOS).\u000aAttributes are copied from the polygons to the output points.\u000aSingle point will be generated for multipolygons.
+p6
+sS'ALG_HELP_CREATOR'
+p7
+VZoltan Siki
+p8
+sS'poly'
+p9
+Vinput polygon layer
+p10
+s.
