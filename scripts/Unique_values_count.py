@@ -23,6 +23,7 @@ f.write('<TABLE>\n<TH>Band Number  </TH> <TH>Cell Value  </TH> <TH>Count</TH>\n'
 
 # process the raster
 for i in xrange(1, bands + 1):
+  progress.setText("processing band " + str(i) + " of " + str(bands))
   band_i = gdalData.GetRasterBand(i)
   raster = band_i.ReadAsArray()
 
@@ -31,6 +32,7 @@ for i in xrange(1, bands + 1):
 
   # count unique values for the given band
   for col in range( xsize ):
+    if col % 10 == 0: progress.setPercentage(int(100*col/xsize))
     for row in range( ysize ):
       cell_value = raster[row, col]
 
