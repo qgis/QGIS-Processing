@@ -10,5 +10,5 @@ centery = (input.extent().yMinimum() + input.extent().yMaximum()) / 2
 width = input.extent().xMaximum() - input.extent().xMinimum() + cellsize
 height = input.extent().yMaximum() - input.extent().yMinimum() + cellsize
 
-processing.runalg('qgis:creategrid', cellsize, cellsize, width, height,
-                  centerx, centery, 3, input.crs().authid(), grid)
+processing.runalg('qgis:creategrid', 3, width, height, cellsize, cellsize, 
+                  centerx, centery, input.crs().authid(), grid)
