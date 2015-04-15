@@ -1,6 +1,6 @@
 ##cover_layer_name=vector 
 ##join_layer_name=vector
-##result=file
+##result=output table
 
 from qgis.core import *
 import csv
