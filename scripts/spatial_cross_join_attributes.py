@@ -27,11 +27,12 @@ for bb in cover_layer.getFeatures():
     request.setFilterRect(bb.geometry().boundingBox())
     dp = join_layer.dataProvider()
     for r in dp.getFeatures(request):
-        row = []
-        for ca in cover_atrs:
-            row.append(bb[ca])
-        
-        for ja in join_atrs: 
-            row.append(r[ja])
+        if bb.geometry().intersects(r.geometry()):
+            row = []
+            for ca in cover_atrs:
+                row.append(bb[ca])
             
-        writer.addRecord(row)
+            for ja in join_atrs: 
+                row.append(r[ja])
+            
+            writer.addRecord(row)
