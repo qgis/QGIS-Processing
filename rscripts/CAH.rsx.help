@@ -1,0 +1,46 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script does a Hierarchical Cluster Analysis (HCA) and gives the dendogram.
+p2
+sS'ALG_CREATOR'
+p3
+VJEANDENANS L.
+p4
+sS'Field3'
+p5
+VThe third field
+p6
+sS'Field1'
+p7
+VThe first field
+p8
+sS'Layer'
+p9
+VInput vector with at least 5 fields.
+p10
+sS'Field4'
+p11
+VThe fourth field
+p12
+sS'Field5'
+p13
+VThe fifth field
+p14
+sS'Field2'
+p15
+VThe second field
+p16
+sS'RPLOTS'
+p17
+Vthe plot of the dendrogram of the analysis
+p18
+sS'ALG_HELP_CREATOR'
+p19
+VJEANDENANS L.
+p20
+sS'method'
+p21
+Vchoice of the method of HCA.
+p22
+s.

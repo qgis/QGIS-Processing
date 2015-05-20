@@ -1,0 +1,46 @@
+(dp0
+S'Field1 '
+p1
+VThe first field
+p2
+sS'ALG_DESC'
+p3
+VThis script does a Factor Analysis of Mixed Data (FAMD) and gives the circle of correlations.
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'Field3 '
+p7
+VThe third field
+p8
+sS'Layer'
+p9
+VInput vector with at least 6 fields.
+p10
+sS'Field2 '
+p11
+VThe second field
+p12
+sS'RPLOTS'
+p13
+Vplot of the correlation circle
+p14
+sS'ALG_HELP_CREATOR'
+p15
+VJEANDENANS L.
+p16
+sS'Field6 '
+p17
+VThe sixth field
+p18
+sS'Field5 '
+p19
+VThe fifth field
+p20
+sS'Field4 '
+p21
+VThe fourth field
+p22
+s.

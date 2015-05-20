@@ -1,0 +1,30 @@
+(dp0
+S'distance'
+p1
+Va number >0
+p2
+sS'ALG_DESC'
+p3
+VThis script selects points which are separated by a distance equal or lower than a distance d and gives a shapefile with points selected.
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'Field1'
+p7
+Vthe name of this points in order to identify objects
+p8
+sS'Layer'
+p9
+VInput vector with points
+p10
+sS'ALG_HELP_CREATOR'
+p11
+VJEANDENANS L.
+p12
+sS'Output'
+p13
+Va shapefile with data which are selected
+p14
+s.

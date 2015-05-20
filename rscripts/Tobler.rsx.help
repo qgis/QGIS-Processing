@@ -1,0 +1,38 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script is a Tobler\u2019s Hiking Function and gives a shapefile with the best way.
+p2
+sS'y_depart'
+p3
+Vcoordinate Y of the starting point
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'x_depart'
+p7
+Vcoordinate X of the starting point
+p8
+sS'Layer'
+p9
+Va raster with elevation
+p10
+sS'y_arrivee'
+p11
+Vcoordinate Y of the end point
+p12
+sS'x_arrivee'
+p13
+Vcoordinate X of the end point
+p14
+sS'ALG_HELP_CREATOR'
+p15
+VJEANDENANS L.
+p16
+sS'Output'
+p17
+Va vector with the way
+p18
+s.

@@ -14,3 +14,35 @@ Relative_distribution_(distance_covariate).rsx,1,Relative distribution (distance
 Relative_distribution_(raster_covariate).rsx,1,Relative distribution (raster covariate).
 Ripley_-_Rasson_spatial_domain.rsx,1,Ripley - Rasson spatial domain.
 Summary_statistics.rsx,1,Summary statistics.
+selection_Cp.rsx,1,selection Cp
+Polygone.rsx,1,Polygone
+ACP_cercle.rsx,1,ACP cercle
+Douglas-Peucker.rsx,1,Douglas-Peucker
+Krigeage.rsx,1,Krigeage
+ponderation.rsx,1,ponderation
+regression_multiple.rsx,1,regression multiple
+ACP_var.rsx,1,ACP var
+selection_adjr2.rsx,1,selection adjr2
+alpha_shape.rsx,1,alpha shape
+AFC.rsx,1,AFC
+Courbe_densite.rsx,1,Courbe densite
+reseau_voisin.rsx,1,reseau voisin
+selection_critere.rsx,1,selection critere
+selection_r2.rsx,1,selection r2
+selection_BIC.rsx,1,selection BIC
+Autocor_spatiale.rsx,1,Autocor spatiale
+douglas_choix-dept.rsx,1,douglas choix-dept
+CAH.rsx,1,CAH
+Distance.rsx,1,Distance
+AFDM.rsx,1,AFDM
+ponderation_selection.rsx,1,ponderation selection
+Tobler.rsx,1,Tobler
+kernel.rsx,1,kernel
+Droite.rsx,1,Droite
+ACP_contribution.rsx,1,ACP contribution
+ANOVA.rsx,1,ANOVA
+Krigeage_selection.rsx,1,Krigeage selection
+CART.rsx,1,CART
+regression.rsx,1,regression
+a-star.rsx,1,a-star
+ACP_individus.rsx,1,ACP individus

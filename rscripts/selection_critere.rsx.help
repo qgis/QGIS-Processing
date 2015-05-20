@@ -1,0 +1,42 @@
+(dp0
+S'Field1 '
+p1
+VThe explained field
+p2
+sS'ALG_DESC'
+p3
+VThis script does a selection of variables. We can choose the model of selection between: exhaustive serach, forward or backward stepwise, or sequential replacement. And we can select the criterion used in the selection.
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'Criteres'
+p7
+Va list of criterions
+p8
+sS'Layer'
+p9
+VInput vector.
+p10
+sS' Field1 '
+p11
+Vthe variable which is explained by the others
+p12
+sS'nbr_var '
+p13
+Va number which is the number of variables which we want in the best model
+p14
+sS'Methode'
+p15
+Vlist of methods
+p16
+sS'ALG_HELP_CREATOR'
+p17
+VJEANDENANS L.
+p18
+sS'Field2 '
+p19
+VThe field which be used to identify the objects.
+p20
+s.

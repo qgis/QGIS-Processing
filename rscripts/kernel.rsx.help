@@ -1,0 +1,30 @@
+(dp0
+S'Layer2'
+p1
+VInput vector of polygons on the same area.
+p2
+sS'ALG_DESC'
+p3
+VThis script computes the Kernel density estimation and gives a raster with estimations. We can choose if we want the correction for a possible frontier bias (method 1) or not (method 0).
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'Layer1'
+p7
+VInput vector with field which we want to estimate.
+p8
+sS'methode'
+p9
+Va number (1 : without correction or 0: with correction)
+p10
+sS'ALG_HELP_CREATOR'
+p11
+VJEANDENANS L.
+p12
+sS'Output'
+p13
+Va raster with the kernel density estimation
+p14
+s.

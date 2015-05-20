@@ -1,0 +1,26 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script computes the density curve.
+p2
+sS'ALG_CREATOR'
+p3
+VJEANDENANS L.
+p4
+sS'Layer'
+p5
+VInput vector
+p6
+sS'Field'
+p7
+Vthe field
+p8
+sS'RPLOTS'
+p9
+Vthe density curve
+p10
+sS'ALG_HELP_CREATOR'
+p11
+VJEANDENANS L.
+p12
+s.

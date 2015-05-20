@@ -1,0 +1,22 @@
+(dp0
+S'ALG_CREATOR'
+p1
+VJEANDENANS L.
+p2
+sS'nombre'
+p3
+Vthe number of the polygon which we want the coordinates
+p4
+sS'ALG_DESC'
+p5
+VThis script extrats the coordinates of polygons
+p6
+sS'Layer'
+p7
+VInput vector with polygons
+p8
+sS'ALG_HELP_CREATOR'
+p9
+VJEANDENANS L.
+p10
+s.
