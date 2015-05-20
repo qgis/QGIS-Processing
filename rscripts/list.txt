@@ -1,0 +1,16 @@
+Advanced_raster_histogram.rsx,1,Advanced raster histogram.
+F_function.rsx,1,F function.
+Frequency_table.rsx,1,Frequency table.
+G_function.rsx,1,G function.
+Histogram.rsx,1,Histogram.
+Kolmogrov-Smirnov_test.rsx,1,Kolmogrov-Smirnov test.
+Minimum_convex_polygon.rsx,1,Minimum convex polygon.
+Monte-Carlo_spatial_randomness.rsx,1,Monte-Carlo spatial randomness.
+Quadrat_analysis.rsx,1,Quadrat analysis.
+Random_sampling_grid.rsx,1,Random sampling grid.
+Raster_histogram.rsx,1,Raster histogram.
+Regular_sampling_grid.rsx,1,Regular sampling grid.
+Relative_distribution_(distance_covariate).rsx,1,Relative distribution (distance covariate).
+Relative_distribution_(raster_covariate).rsx,1,Relative distribution (raster covariate).
+Ripley_-_Rasson_spatial_domain.rsx,1,Ripley - Rasson spatial domain.
+Summary_statistics.rsx,1,Summary statistics.
