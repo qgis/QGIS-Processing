@@ -1,5 +1,5 @@
 ##Point pattern analysis=group
-##Layer=vector
+##Layer=vector point
 ##Covariate=vector
 ##Covariate_name=string mandatory_covariate_name_(no_spaces)
 ##x_label=string

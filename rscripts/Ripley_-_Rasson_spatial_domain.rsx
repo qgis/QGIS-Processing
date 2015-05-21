@@ -1,5 +1,5 @@
 ##Point pattern analysis=group
-##Layer=vector
+##Layer=vector point
 ##Output=output vector
 library("spatstat")
 library("maptools")

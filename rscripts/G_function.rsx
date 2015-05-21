@@ -1,5 +1,5 @@
 ##Point pattern analysis=group
-##Layer=vector
+##Layer=vector point
 ##Nsim=number 10
 ##showplots
 library("maptools")

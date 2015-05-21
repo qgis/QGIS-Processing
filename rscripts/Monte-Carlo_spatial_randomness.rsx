@@ -1,5 +1,5 @@
 ##Point pattern analysis=group
-##Layer=vector
+##Layer=vector point
 ##Simulations=number 100
 ##Optional_plot_name=string
 ##showplots

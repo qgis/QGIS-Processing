@@ -1,5 +1,5 @@
 ##Point pattern analysis=group
-##points=vector
+##points=vector point
 ##covariate=raster
 ##covariate_name=string mandatory_covariate_name_(no_spaces)
 ##x_label=string
