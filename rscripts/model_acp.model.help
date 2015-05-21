@@ -1,0 +1,58 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis model does a Principal Component Analysis (PCA) with 4 fields and gives: (1) the circle of correlations, (2) the plot of the contribution of each field to an axis, (3)  a representation of persons , (4) the representation of variables.
+p2
+sS'ALG_CREATOR'
+p3
+VJEANDENANS L.
+p4
+sVVECTORLAYER_LAYER
+p5
+VInput vector with at least 4 fields.
+p6
+sVTABLEFIELD_FIELD4
+p7
+VThe fourth field
+p8
+sVNUMBER_INDIVIDU1
+p9
+Va number of a person who we want to see on the plot
+p10
+sVNUMBER_INDIVIDU2
+p11
+Va number of a person who we want to see on the plot
+p12
+sVTABLEFIELD_FIELD2
+p13
+VThe second field
+p14
+sVTABLEFIELD_FIELD3
+p15
+VThe third field
+p16
+sVTABLEFIELD_FIELD1
+p17
+VThe first field
+p18
+sS'RPLOTS_ALG0'
+p19
+VThe plot of the circle of correlations
+p20
+sS'RPLOTS_ALG1'
+p21
+VThe plot of the contribution of each field to an axis.
+p22
+sS'RPLOTS_ALG2'
+p23
+VThe plot of a representation of persons
+p24
+sS'RPLOTS_ALG3'
+p25
+VThe plot of a representation of variables.
+p26
+sS'ALG_HELP_CREATOR'
+p27
+VJEANDENANS L.
+p28
+s.

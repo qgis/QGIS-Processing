@@ -1,0 +1,48 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script does a multiple regression with 6 explicatives vairables and gives the summary of the test.
+p2
+sS'ALG_CREATOR'
+p3
+VJEANDENANS L.
+p4
+sS'Field3'
+p5
+VThe second explicative field.
+p6
+sS'Field1'
+p7
+VThe explained field.
+p8
+sS'Field6'
+p9
+VThe fifth explicative field.
+p10
+sS'Layer'
+p11
+VInput vector with at least 7 fields.
+p12
+sS'Field4'
+p13
+VThe third explicative field.
+p14
+sS'Field5'
+p15
+VThe fourth explicative field.
+p16
+sS'Field2'
+p17
+VThe first explicative field.
+p18
+sS'Field7'
+p19
+VThe sixth explicative field.
+p20
+sS'ALG_HELP_CREATOR'
+p21
+VJEANDENANS L.
+p22
+sNV
+p23
+s.

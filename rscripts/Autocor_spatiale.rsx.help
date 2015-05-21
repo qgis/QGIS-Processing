@@ -1,0 +1,34 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script calculates the spatial corelation with the Moran's test 
+p2
+sS'nb_vois'
+p3
+Vnumber of neighboors in the moran's test
+p4
+sS'nb_simul'
+p5
+Vnumber of simulation in the moran's test
+p6
+sS'ALG_CREATOR'
+p7
+VJEANDENANS L.
+p8
+sS'Layer'
+p9
+VInput vector with at least one field
+p10
+sS'Field'
+p11
+Vthe field
+p12
+sS'RPLOTS'
+p13
+Vhistogram of residues
+p14
+sS'ALG_HELP_CREATOR'
+p15
+VJEANDENANS L.
+p16
+s.

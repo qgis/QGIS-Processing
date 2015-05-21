@@ -1,0 +1,30 @@
+(dp0
+S'Layer2'
+p1
+Va line
+p2
+sS'ALG_DESC'
+p3
+VThis script calculates the distance between two geometries: a line and points.
+p4
+sS'ALG_CREATOR'
+p5
+VJEANDENANS L.
+p6
+sS'Layer1'
+p7
+Va set of data (points)
+p8
+sS'Field'
+p9
+Videntification of points
+p10
+sS'ALG_HELP_CREATOR'
+p11
+VJEANDENANS L.
+p12
+sS'output'
+p13
+Va shapfile with points and the distance.
+p14
+s.

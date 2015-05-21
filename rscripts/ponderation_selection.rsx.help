@@ -1,0 +1,66 @@
+(dp0
+S'a'
+p1
+Va number
+p2
+sS'Layer2'
+p3
+VInput raster of the area.
+p4
+sS'ALG_DESC'
+p5
+VThis script computes an Inverse Distance Weigthing (IDW) with differents methods and parameters.It gives a shapefile with coordinates of points and values of the ponderation.\u000aThe differents methods of ponderation are:\u000a(0) w(d)=1/(d^p)\u000a(1) w(d)=1/(1+d^p)\u000a(2) w(d)=(1-nugget)/(1+(range/d)^2)\u000a(3) w(d)=(1-nugget)*exp(-range/d)\u000a(4) w(d)=(1-nugget)*[1-1.5*(range/d)+0.5*(range/d)^3]\u000a(5) w(d)=1-\u222bp(t)dt, avec p(t) the density of the normal distribution\u000a(6) w(d)=1/(1+exp(-alpha)), avec alpha=a*d+b (a>0)
+p6
+sS'b'
+p7
+Va number
+p8
+sS'ALG_CREATOR'
+p9
+VJEANDENANS L.
+p10
+sS'nugget'
+p11
+Va number
+p12
+sS'Layer1'
+p13
+VInput vector with points
+p14
+sS'puissance'
+p15
+Va number >0
+p16
+sS'mu'
+p17
+Va number
+p18
+sS'distance.max'
+p19
+Va number >0
+p20
+sS'range'
+p21
+Va number
+p22
+sS'ALG_HELP_CREATOR'
+p23
+VJEANDENANS L.
+p24
+sS'ponderation'
+p25
+Va number between 0 and 7 to select the method
+p26
+sS'output'
+p27
+Va shapefile with coordinates of points and values of the ponderation
+p28
+sS'sigma'
+p29
+Va number
+p30
+sS'distance.min'
+p31
+Va number >0
+p32
+s.

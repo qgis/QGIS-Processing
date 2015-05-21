@@ -1,0 +1,26 @@
+(dp0
+S'ALG_DESC'
+p1
+VThis script does a Classification And Regression Trees (CART) and gives the plot with the tree.
+p2
+sS'ALG_CREATOR'
+p3
+VJEANDENANS L.
+p4
+sS'Field1'
+p5
+VThe field
+p6
+sS'Layer'
+p7
+VInput vector with at least one field.
+p8
+sS'RPLOTS'
+p9
+Vthe tree of the CART
+p10
+sS'ALG_HELP_CREATOR'
+p11
+VJEANDENANS L.
+p12
+s.
