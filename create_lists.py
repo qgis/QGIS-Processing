@@ -25,6 +25,7 @@ if __name__ == '__main__':
                 except:
                     version = 1
         scripts.append('%s,%s,%s' % (basename, version, name))
+    scripts = sorted( scripts )
     with open('scripts/list.txt', 'w') as f:
         f.write('\n'.join(scripts))
 		
