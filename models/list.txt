@@ -1,4 +1,6 @@
-mult.model,2.6,Multiply 2 layers
-rasterizeandfill.model,2.6,Rasterize and fill
-watersheds.model,2.6,Watersheds from DEM and threshold
-modelwithin.model,2.6,Model within a model
+model_IDW.model,1,model IDW
+model_PCA.model,1,model PCA
+modelwithin.model,1,modelwithin
+mult.model,1,mult
+rasterizeandfill.model,1,rasterizeandfill
+watersheds.model,1,watersheds

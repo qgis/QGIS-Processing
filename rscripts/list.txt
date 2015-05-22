@@ -1,48 +1,54 @@
-Advanced_raster_histogram.rsx,1,Advanced raster histogram.
-F_function.rsx,1,F function.
-Frequency_table.rsx,1,Frequency table.
-G_function.rsx,1,G function.
-Histogram.rsx,1,Histogram.
-Kolmogrov-Smirnov_test.rsx,1,Kolmogrov-Smirnov test.
-Minimum_convex_polygon.rsx,1,Minimum convex polygon.
-Monte-Carlo_spatial_randomness.rsx,1,Monte-Carlo spatial randomness.
-Quadrat_analysis.rsx,1,Quadrat analysis.
-Random_sampling_grid.rsx,1,Random sampling grid.
-Raster_histogram.rsx,1,Raster histogram.
-Regular_sampling_grid.rsx,1,Regular sampling grid.
-Relative_distribution_(distance_covariate).rsx,1,Relative distribution (distance covariate).
-Relative_distribution_(raster_covariate).rsx,1,Relative distribution (raster covariate).
-Ripley_-_Rasson_spatial_domain.rsx,1,Ripley - Rasson spatial domain.
-Summary_statistics.rsx,1,Summary statistics.
-selection_Cp.rsx,1,selection Cp
-Polygone.rsx,1,Polygone
+A-star.rsx,1,A-star
 ACP_cercle.rsx,1,ACP cercle
-Douglas-Peucker.rsx,1,Douglas-Peucker
-Krigeage.rsx,1,Krigeage
-ponderation.rsx,1,ponderation
-regression_multiple.rsx,1,regression multiple
-ACP_var.rsx,1,ACP var
-selection_adjr2.rsx,1,selection adjr2
-alpha_shape.rsx,1,alpha shape
-AFC.rsx,1,AFC
-Courbe_densite.rsx,1,Courbe densite
-reseau_voisin.rsx,1,reseau voisin
-selection_critere.rsx,1,selection critere
-selection_r2.rsx,1,selection r2
-selection_BIC.rsx,1,selection BIC
-Autocor_spatiale.rsx,1,Autocor spatiale
-douglas_choix-dept.rsx,1,douglas choix-dept
-CAH.rsx,1,CAH
-Distance.rsx,1,Distance
-AFDM.rsx,1,AFDM
-ponderation_selection.rsx,1,ponderation selection
-Tobler.rsx,1,Tobler
-kernel.rsx,1,kernel
-Droite.rsx,1,Droite
 ACP_contribution.rsx,1,ACP contribution
-ANOVA.rsx,1,ANOVA
-Krigeage_selection.rsx,1,Krigeage selection
-CART.rsx,1,CART
-regression.rsx,1,regression
-a-star.rsx,1,a-star
 ACP_individus.rsx,1,ACP individus
+ACP_var.rsx,1,ACP var
+AFC.rsx,1,AFC
+AFDM.rsx,1,AFDM
+ANOVA.rsx,1,ANOVA
+Advanced_raster_histogram.rsx,1,Advanced raster histogram
+Alpha_shape.rsx,1,Alpha shape
+Autocor_spatiale.rsx,1,Autocor spatiale
+CAH.rsx,1,CAH
+CART.rsx,1,CART
+Close_neighbor.rsx,1,Close neighbor
+Density_curve.rsx,1,Density curve
+Distance.rsx,1,Distance
+Douglas-Peucker.rsx,1,Douglas-Peucker
+Douglas-Peucker_with_choice.rsx,1,Douglas-Peucker with choice
+Extract_points_from_line.rsx,1,Extract points from line
+F_function.rsx,1,F function
+Frequency_table.rsx,1,Frequency table
+G_function.rsx,1,G function
+Histogram.rsx,1,Histogram
+Inverse_Distance_Weigthing.rsx,1,Inverse Distance Weigthing
+Inverse_Distance_Weigthing_with_method_selection.rsx,1,Inverse Distance Weigthing with method selection
+Kernel_density_estimation.rsx,1,Kernel density estimation
+Kolmogrov-Smirnov_test.rsx,1,Kolmogrov-Smirnov test
+Kriging.rsx,1,Kriging
+Kriging_with_model_selection.rsx,1,Kriging with model selection
+Minimum_convex_polygon.rsx,1,Minimum convex polygon
+Monte-Carlo_spatial_randomness.rsx,1,Monte-Carlo spatial randomness
+Multiple_Regression.rsx,1,Multiple Regression
+Polygone.rsx,1,Polygone
+Quadrat_analysis.rsx,1,Quadrat analysis
+Random_sampling_grid.rsx,1,Random sampling grid
+Raster_histogram.rsx,1,Raster histogram
+Regular_sampling_grid.rsx,1,Regular sampling grid
+Relative_distribution_(distance_covariate).rsx,1,Relative distribution (distance covariate)
+Relative_distribution_(raster_covariate).rsx,1,Relative distribution (raster covariate)
+Ripley_-_Rasson_spatial_domain.rsx,1,Ripley - Rasson spatial domain
+Selection_Cp.rsx,1,Selection Cp
+Selection_with_Bayesian_Information_Criterion.rsx,1,Selection with Bayesian Information Criterion
+Selection_with_criterion_choice.rsx,1,Selection with criterion choice
+Selection_with_r2.rsx,1,Selection with r2
+Selection_with_r2_adjusted.rsx,1,Selection with r2 adjusted
+Simple_Linear_Regression.rsx,1,Simple Linear Regression
+Summary_statistics.rsx,1,Summary statistics
+Tobler.rsx,1,Tobler
+frequency_plot.rsx,0.1,frequency plot
+ggplot_scatterplot.rsx,1.0,ggplot scatterplot
+qqplot.rsx,1.0,qqplot
+scatterplot_log.rsx,1.0,scatterplot log
+scatterplot_regressione.rsx,1,scatterplot regressione
+scatterplot_types.rsx,1.0,scatterplot types
