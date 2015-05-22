@@ -1,0 +1,1 @@
+{"ALG_DESC": "Scatterplot", "ALG_CREATOR": "Matteo Ghetta", "Layer": "Vector layer in input", "ALG_VERSION": "1.0", "RPLOTS": "Plot in output", "ALG_HELP_CREATOR": "Matteo Ghetta", "Y": "Y parameter", "X": "X parameter", "type": "Plot type (point, line, both)"}

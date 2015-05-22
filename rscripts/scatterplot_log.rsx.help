@@ -1,0 +1,1 @@
+{"ALG_DESC": "Scatterplot with different axis scales", "ALG_CREATOR": "Matteo Ghetta", "Layer": "Vector layer in input", "ALG_VERSION": "1.0", "RPLOTS": "Output plot", "ALG_HELP_CREATOR": "Matteo Ghetta", "Y": "X parameter", "X": "X parameter", "type": "Scale type (normal, logarithmic)"}

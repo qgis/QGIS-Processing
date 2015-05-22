@@ -1,0 +1,1 @@
+{"ALG_DESC": "Simple scatterplot (with grouping option) with ggplot.\n\nNote: be sure ggplot2 package is installed in your computer!", "Group": "Grouping variable", "ALG_CREATOR": "Matteo Ghetta", "Layer": "Input vector layer", "ALG_VERSION": "1.0", "RPLOTS": "ggplot graph", "ALG_HELP_CREATOR": "Matteo Ghetta", "Y": "X parameter", "X": "X parameter"}
