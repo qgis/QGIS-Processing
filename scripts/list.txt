@@ -5,6 +5,8 @@ Create_rasters_from_canvas_for_each_vector_layer_feature_extent.py,1,Create rast
 Create_tiling_from_vector_layer.py,1,Create tiling from vector layer
 Create_vector_layer_from_Postgis_table.py,1,Create vector layer from Postgis table
 Create_vector_layer_from_SQL_Query.py,1,Create vector layer from SQL Query
+CSV_R-G-B_to_categorized_style.py,1,CSV R-G-B to categorized style
+CSV_RGB_or_HEX_to_categorized_style.py,1,CSV RGB or HEX to categorized style
 Cut_by_field.py,1,Cut by field
 Define_1_raster_layer_properties.py,1,Define 1 raster layer properties
 Define_1_vector_layer_properties.py,1,Define 1 vector layer properties
