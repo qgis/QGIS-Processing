@@ -19,11 +19,11 @@
 
 # The following double # section makes this script compatible with QGIS Processing Toolbox
 ##Vector=group
-##minX=number -180
-##maxX=number 180
-##minY=number -90
-##maxY=number 90
-##step=number 10
+##xmin=number -180
+##xmax=number 180
+##ymin=number -90
+##ymax=number 90
+##spacing=number 10
 ##density=number 1
 ##outfile=output file
 ##graticule=output vector
@@ -173,7 +173,7 @@ if __name__ != '__main__':
     from qgis.core import QgsVectorLayer, QgsVectorFileWriter
     # When code is executed as part of another application run this section.
     # Specifically configured only to work with QGIS Processing Toolbox right now. 
-    make_graticule(outfile, minX, minY, maxX, maxY, step, density)
+    make_graticule(outfile, xmin, ymin, xmax, ymax, spacing, density)
     
     #Read the GeoJson file in as VectorLayer to show it in map, and potentially pass it to other processing algorithms
     vlayer = QgsVectorLayer(outfile,"graticule","ogr")
