@@ -3,7 +3,7 @@
 
 ##Vector_layer=vector 
 ##Value_field=field Vector_layer
-##CSV_file_with_semicolon_delimiter= file 
+##CSV_file_with_semicolon_delimiter= file
 ##CSV_Encoding=string latin1
 ##Column_value=number 0
 ##Column_label=number 1
@@ -47,10 +47,13 @@ if  fileExtension =='.csv':
             col_select =row[Column_value], row[Column_label].decode(CSV_Encoding),row[Column_red], row[Column_green], row[Column_blue]
             # Insere chaque ligne du CSV dans le tableau
             tab.append(col_select)
-   
+            
+            #Permet la suppression des doublons
+            Lt= list(set(tab))
+            Lt.sort()
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         categories = []
-        for value, label, red, green, blue in tab :
+        for value, label, red, green, blue in Lt :
             #Concatener r,g,b
             color_rgb = red+','+green+','+blue
             tab_list = value +' - '+label+' - '+red+','+green+','+blue

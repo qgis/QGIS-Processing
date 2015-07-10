@@ -46,9 +46,13 @@ if  fileExtension =='.csv':
                 col_select =row[Column_value], row[Column_label].decode(CSV_Encoding),row[Column_RGB_or_HEX]
                 # Insere chaque ligne du CSV dans le tableau
                 tab.append(col_select)
+                
+                #Permet la suppression des doublons
+                Lt= list(set(tab))
+                Lt.sort()
     #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         categories = []
-        for value, label, color in tab :
+        for value, label, color in Lt :
             tab_list = value +' - '+label+' - '+color
             progress.setText(u'Category : %s' % tab_list)
             # Creation de la ligne
