@@ -1,0 +1,1 @@
+{"ALG_DESC": "Assign projection to shapefile copying the .prj file", "ALG_CREATOR": "Luca Lanteri", "layer": "the input layer", "ALG_VERSION": "0.1", "ALG_HELP_CREATOR": "Luca Lanteri", "input": "[layer]: The list of the layer to assign projection\n[file prj]: The prj file", "file_prj": "The file containing prj information"}
