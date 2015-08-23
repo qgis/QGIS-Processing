@@ -5,10 +5,7 @@
 
 input = processing.getObject(input)
 
-centerx = (input.extent().xMinimum() + input.extent().xMaximum()) / 2
-centery = (input.extent().yMinimum() + input.extent().yMaximum()) / 2
-width = input.extent().xMaximum() - input.extent().xMinimum() + cellsize
-height = input.extent().yMaximum() - input.extent().yMinimum() + cellsize
+extent = input.extent()
+extent = '%f,%f,%f,%f' %(input.extent().xMinimum()-cellsize/2, input.extent().xMaximum()+cellsize/2, input.extent().yMinimum()-cellsize/2, input.extent().yMaximum()+cellsize/2)
 
-processing.runalg('qgis:creategrid', 3, width, height, cellsize, cellsize, 
-                  centerx, centery, input.crs().authid(), grid)
+processing.runalg('qgis:creategrid', 3, extent, cellsize, cellsize, input.crs().authid(),grid)
