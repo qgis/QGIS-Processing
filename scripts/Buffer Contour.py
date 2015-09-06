@@ -9,7 +9,7 @@
 
 from qgis.core import *
 from PyQt4.QtCore import *
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 from shapely.ops import cascaded_union
 from shapely.wkb import loads
 from shapely.wkt import dumps

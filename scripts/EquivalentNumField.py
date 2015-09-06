@@ -16,8 +16,8 @@ from qgis.core import (
     QgsFeature,
     QgsField)
 from processing.tools import vector
-from processing.core.TableWriter import TableWriter
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import TableWriter
+from processing.tools.vector import VectorWriter
 from processing.core.GeoAlgorithmExecutionException import *
 
 vlayer = processing.getObject(layer)

@@ -4,7 +4,7 @@
 
 from qgis.core import *
 from PyQt4.QtCore import *
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 from operator import itemgetter
 
 To_keep = int(To_keep)

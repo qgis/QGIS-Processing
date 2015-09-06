@@ -5,7 +5,7 @@
 ##output=output vector
 
 from qgis.core import *
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 
 # Get vector layer object
 layer = processing.getObject(Vector_layer)

@@ -13,7 +13,7 @@
 ##output=output vector
 
 from qgis.core import *
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 
 # Create uri from database connection options
 uri = QgsDataSourceURI()

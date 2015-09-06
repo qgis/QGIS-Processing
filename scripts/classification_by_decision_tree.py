@@ -11,7 +11,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
 #Import processing
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 from processing.core.GeoAlgorithmExecutionException import \
         GeoAlgorithmExecutionException
 #import sklearn

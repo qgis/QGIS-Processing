@@ -3,7 +3,7 @@
 from qgis.core import *
 from qgis.core import *
 from qgis.utils import *
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 from math import sqrt
 
 inputLayer = processing.getObject(poly)

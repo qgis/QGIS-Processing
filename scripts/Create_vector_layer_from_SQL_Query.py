@@ -12,7 +12,7 @@ from qgis.core import *
 from db_manager.db_plugins.plugin import DBPlugin, Schema, Table, BaseError
 from db_manager.db_plugins import createDbPlugin
 from db_manager.dlg_db_error import DlgDbError
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 
 connectionName = unicode(Connection_name)
 dbTypeMap = { 0: 'postgis', 1: 'spatialite' }

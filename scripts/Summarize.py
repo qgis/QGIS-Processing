@@ -5,7 +5,7 @@
 from PyQt4.QtCore import *
 from qgis.core import *
 
-from processing.core.VectorWriter import VectorWriter
+from processing.tools.vector import VectorWriter
 
 inputLayer = processing.getObject(input)
 features = processing.features(inputLayer)
