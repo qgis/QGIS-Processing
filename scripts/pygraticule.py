@@ -19,6 +19,7 @@
 
 # The following double # section makes this script compatible with QGIS Processing Toolbox
 ##Vector=group
+##Lines graticule=name
 ##xmin=number -180
 ##xmax=number 180
 ##ymin=number -90
