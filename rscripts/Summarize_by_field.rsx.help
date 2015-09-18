@@ -1,0 +1,1 @@
+{"ALG_DESC": "", "ALG_CREATOR": "Filipe S. Dias", "Layer": "This script summarizes a numeric field by a factor field. It requires packages \"doBy\",\"foreign\" and \"plyr\".", "Numeric_field": "Numeric field", "Factor": "Factor field", "Folder": "Output folder. This is NOT optional."}
