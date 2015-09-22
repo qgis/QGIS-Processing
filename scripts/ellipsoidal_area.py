@@ -1,7 +1,9 @@
+##Ellipsoidal Area=name
+##Utils=group
 ##input=vector polygon
 ##ellipsoid=string WGS84
 ##new_field=string Area
-##units=string sq_km
+##units=selection sq_km;sq_m;sq_miles;sq_ft;sq_nm;sq_degrees
 ##output=output vector
 
 from processing.core.GeoAlgorithmExecutionException import GeoAlgorithmExecutionException
@@ -9,14 +11,12 @@ from processing.tools.vector import VectorWriter
 from PyQt4.QtCore import *
 from qgis.core import *
 
-measure_units = ['sq_m', 'sq_ft', 'sq_km', 'sq_miles',
-                 'sq_nm', 'sq_degrees']
 
+measure_units_dict = {0: 'sq_km', 1: 'sq_m', 2: 'sq_miles', 3: 'sq_ft',
+        4: 'sq_nm', 5:'sq_degrees'}
+units_selection = measure_units_dict[units]
 input_layer = processing.getObject(input)
 
-if units not in measure_units:
-  raise GeoAlgorithmExecutionException(
-      'Unknown units. Accepted unit values are %s' % ', '.join(measure_units))
 if not input_layer.crs().geographicFlag():
   raise GeoAlgorithmExecutionException(
       'Your layer has a Projected CRS. '
@@ -59,24 +59,25 @@ for i, feat in enumerate(features):
     polygon_area = area.measurePolygon(polygon[0])
 
   # calculated area is in sq. metres
-  if units == 'sq_km':
+  if units_selection == 'sq_km':
     final_area = polygon_area / 1e6
-  elif units == 'sq_ft':
+  elif units_selection == 'sq_ft':
     final_area = area.convertMeasurement(
         polygon_area, QGis.Meters, QGis.Feet, True)[0]
-  elif units == 'sq_miles':
+  elif units_selection == 'sq_miles':
     final_area = area.convertMeasurement(
         polygon_area, QGis.Meters, QGis.Feet, True)[0] / (5280.0 * 5280.0)
-  elif units == 'sq_nm':
+  elif units_selection == 'sq_nm':
     final_area = area.convertMeasurement(
         polygon_area, QGis.Meters, QGis.NauticalMiles, True)[0]
-  elif units == 'sq_degrees':
+  elif units_selection == 'sq_degrees':
     final_area = area.convertMeasurement(
         polygon_area, QGis.Meters, QGis.Degrees, True)[0]
   else:
     final_area = polygon_area
 
-  attrs = feat.attributes() + [final_area]
+  attrs = feat.attributes()
+  attrs.append(final_area)
   out_f.setGeometry(geom)
   out_f.setAttributes(attrs)
   writer.addFeature(out_f)
