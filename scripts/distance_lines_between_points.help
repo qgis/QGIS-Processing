@@ -1,1 +1,0 @@
-{"ALG_DESC": "Creates line layer containing all possible segments between a set of points and their lengths (distance) as an attribute.", "ALG_CREATOR": "Raymond Nijssen", "ALG_VERSION": "1.0", "ALG_HELP_CREATOR": "Raymond Nijssen", "inputLayer": "Any Point layer"}

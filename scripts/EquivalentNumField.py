@@ -1,4 +1,4 @@
-##Create equivalent numerical field=Name
+##Create equivalent numerical field=name
 ##Vector=group
 ##layer=vector
 ##fieldname=field layer

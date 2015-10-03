@@ -34,3 +34,6 @@ Summarize.py,1,Summarize
 Unique_values_count.py,1,Unique values count
 Frequency_analysis.py,1,Frequency analysis
 ellipsoidal_area.py,1,Ellipsoidal area
+distance_lines_between_points.py,1,Distance lines between points
+EquivalentNumField.py,1,Create equivalent numerical field
+realcentroid_algorithm.py,1,Real centroid

@@ -1,3 +1,5 @@
+##Real centroid=name
+##Vector=group
 ##poly=vector
 ##output=output vector
 from qgis.core import *

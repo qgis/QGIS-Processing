@@ -1,9 +1,11 @@
+##Distance lines between points=name
+##Vector=group
+##pointLayer=vector
+##outputLayer=output vector
+
 from qgis.core import *
 from PyQt4.QtCore import *
 from processing.tools.vector import VectorWriter
-
-##pointLayer=vector
-##outputLayer=output vector
 
 inputLayer = processing.getObject(pointLayer)
 # create new layer for output:
