@@ -21,7 +21,7 @@ Number_of_unique_values_in_classes.py,1,Number of unique values in classes
 Points on crossing lines.py,1,Points on crossing lines
 Points on touching lines.py,1,Points on touching lines
 Points_from_vector.py,1,Points from vector
-predominant_category.py,1,predominant category
+predominant_category.py,1,Assign predominant category
 pygraticule.py,1,Lines graticule
 Read_file_content_into_string.py,1,Read file content into string
 Remove_parts.py,1,Remove parts
@@ -33,4 +33,4 @@ Square_grid_from_layer_extent.py,1,Square grid from layer extent
 Summarize.py,1,Summarize
 Unique_values_count.py,1,Unique values count
 Frequency_analysis.py,1,Frequency analysis
-ellipsoidal_area.py,1,Ellipsoidal Area
+ellipsoidal_area.py,1,Ellipsoidal area
