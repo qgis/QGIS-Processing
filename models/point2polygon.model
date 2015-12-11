@@ -1,0 +1,182 @@
+{
+    "values": {
+        "inputs": {
+            "TABLEFIELD_GROUPBY": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 256.0, 
+                            "x": 121.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "TABLEFIELD_GROUPBY", 
+                            "parent": "VECTORLAYER_POINTSLAYER", 
+                            "datatype": -1, 
+                            "value": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Group By"
+                        }, 
+                        "class": "processing.core.parameters.ParameterTableField"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "TABLEFIELD_ORDERBY": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 409.0, 
+                            "x": 118.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "TABLEFIELD_ORDERBY", 
+                            "parent": "VECTORLAYER_POINTSLAYER", 
+                            "datatype": -1, 
+                            "value": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Order By"
+                        }, 
+                        "class": "processing.core.parameters.ParameterTableField"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "VECTORLAYER_POINTSLAYER": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 140.0, 
+                            "x": 115.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_POINTSLAYER", 
+                            "shapetype": [
+                                0
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Points layer"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {
+            "TABLEFIELD_GROUPBY": "Attribute to separate different polygons.", 
+            "ALG_DESC": "This tool creates polygons from a points layer.", 
+            "TABLEFIELD_ORDERBY": "Attribute to dictate the order to connect the points for each group.", 
+            "ALG_CREATOR": "Klas Karlsson", 
+            "ALG_VERSION": "1", 
+            "ALG_HELP_CREATOR": "", 
+            "VECTORLAYER_POINTSLAYER": "A points layer with at least two attributes for \"group\" and \"order\" to be used in the process.", 
+            "OUTPUT_ALGQGISLINESTOPOLYGONS_1": "The output polygon layer."
+        }, 
+        "group": "My Tools", 
+        "name": "Points2Polygon", 
+        "algs": {
+            "QGISLINESTOPOLYGONS_1": {
+                "values": {
+                    "name": "QGISLINESTOPOLYGONS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "My Polygons", 
+                                "pos": {
+                                    "values": {
+                                        "y": 526.0, 
+                                        "x": 551.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 422.0, 
+                            "x": 481.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISPOINTSTOPATH_1", 
+                                "output": "OUTPUT_LINES"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:linestopolygons", 
+                    "description": "Lines to polygons"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISPOINTSTOPATH_1": {
+                "values": {
+                    "name": "QGISPOINTSTOPATH_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 289.0, 
+                            "x": 403.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": false, 
+                    "dependencies": [], 
+                    "params": {
+                        "DATE_FORMAT": null, 
+                        "GROUP_FIELD": {
+                            "values": {
+                                "name": "TABLEFIELD_GROUPBY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "VECTOR": {
+                            "values": {
+                                "name": "VECTORLAYER_POINTSLAYER"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "ORDER_FIELD": {
+                            "values": {
+                                "name": "TABLEFIELD_ORDERBY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:pointstopath", 
+                    "description": "Points to path"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
