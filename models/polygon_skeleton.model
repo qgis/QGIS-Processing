@@ -1,0 +1,514 @@
+{
+    "values": {
+        "inputs": {
+            "NUMBER_THRESHOLD1TOREMOVEDANGLES": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 354.0, 
+                            "x": 427.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_THRESHOLD1TOREMOVEDANGLES", 
+                            "min": null, 
+                            "default": 1, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "description": "Threshold (1) to remove dangles"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "NUMBER_THRESHOLDTOREMOVEDANGLES2": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 136.0, 
+                            "x": 791.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_THRESHOLDTOREMOVEDANGLES2", 
+                            "min": null, 
+                            "default": 1, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "description": "Threshold (2) to remove dangles"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "NUMBER_THRESHOLD3TOREMOVEDANGLES": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 231.0, 
+                            "x": 875.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "NUMBER_THRESHOLD3TOREMOVEDANGLES", 
+                            "min": null, 
+                            "default": 1, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": true, 
+                            "description": "Threshold (3) to remove dangles"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "VECTORLAYER_INPOLY": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 24.0, 
+                            "x": 110.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_INPOLY", 
+                            "shapetype": [
+                                2
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Input polygon layer"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "STRING_MAXDIST": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 138.0, 
+                            "x": 316.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "STRING_MAXDIST", 
+                            "default": "1000", 
+                            "value": null, 
+                            "multiline": false, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Distance between points"
+                        }, 
+                        "class": "processing.core.parameters.ParameterString"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {
+            "ALG_DESC": "Simple algorithm to compute skeleton of polygon(s) (and centerline). \n\nOutput is line(s) layer with one line for every polygon. Lines have all attributes from polygons.\n\nUse Voronoi polygons, GRASS modules \"v.to.points\" and \"v.clean\", and processing script \"Merge all lines in layer\" ()\n\n\n\n", 
+            "NUMBER_THRESHOLD3TOREMOVEDANGLES": "Cleaning 3 (additional)\n\nNumber value (in meters) to remove dangles (side lines) from centerline. Used by \"v.to.points\" GRASS module. \n\nMust be in several times larger, than \"Threshold 2\" parameter.", 
+            "ALG_CREATOR": "Alexander Muriy\n\n(Institute Of Environmental Geoscience [IEG \nRAS], Moscow, Russia)\n[amuriy AT gmail DOT com]", 
+            "NUMBER_THRESHOLD1TOREMOVEDANGLES": "Cleaning 1\n\nNumber value (in meters) to remove dangles (side lines) from centerline. Used by \"v.to.points\" GRASS module. \n\nMust be in several times larger, than \"Distance between points\" parameter.", 
+            "VECTORLAYER_INPOLY": "Any polygon layer (or multipolygon). \nMust have Cartesian coordinates in meters (not only reproject on the fly!)", 
+            "NUMBER_THRESHOLDTOREMOVEDANGLES2": "Cleaning 2 (additional)\n\nNumber value (in meters) to remove dangles (side lines) from centerline. Used by \"v.to.points\" GRASS module. \n\nMust be in several times larger, than \"Threshold 1\" parameter.", 
+            "STRING_MAXDIST": "Distance between points along the borders of polygon (in meters). Used by \"v.to.points\" GRASS module.\n\nATTENTION: small values may freeze QGIS interface! Be careful!", 
+            "OUTPUT_ALGQGISINTERSECTION_1": "Line layer with single line for every polygon.", 
+            "ALG_VERSION": "1.0", 
+            "ALG_HELP_CREATOR": "Alexander Muriy\n\n(Institute Of Environmental Geoscience [IEG \nRAS], Moscow, Russia)\n[amuriy AT gmail DOT com]"
+        }, 
+        "group": "Custom", 
+        "name": "Skeleton of polygon", 
+        "algs": {
+            "QGISPOLYGONSTOLINES_2": {
+                "values": {
+                    "name": "QGISPOLYGONSTOLINES_2", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 298.0, 
+                            "x": 212.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISVORONOIPOLYGONS_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:polygonstolines", 
+                    "description": "Polygons to lines"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISPOLYGONSTOLINES_1": {
+                "values": {
+                    "name": "QGISPOLYGONSTOLINES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 88.0, 
+                            "x": 134.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "name": "VECTORLAYER_INPOLY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:polygonstolines", 
+                    "description": "Polygons to lines"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISINTERSECTION_1": {
+                "values": {
+                    "name": "QGISINTERSECTION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "Skeleton line(s)", 
+                                "pos": {
+                                    "values": {
+                                        "y": 550.0, 
+                                        "x": 883.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 505.0, 
+                            "x": 683.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT2": {
+                            "values": {
+                                "name": "VECTORLAYER_INPOLY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "SCRIPTMERGEALLLINESINLAYER_1", 
+                                "output": "Merged_lines"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:intersection", 
+                    "description": "Intersection"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISVORONOIPOLYGONS_1": {
+                "values": {
+                    "name": "QGISVORONOIPOLYGONS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 237.0, 
+                            "x": 185.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "BUFFER": 0.0, 
+                        "INPUT": {
+                            "values": {
+                                "alg": "GRASS7V.TO.POINTS_1", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:voronoipolygons", 
+                    "description": "Voronoi polygons"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISEXTRACTBYLOCATION_1": {
+                "values": {
+                    "name": "QGISEXTRACTBYLOCATION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 92.0, 
+                            "x": 618.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "GRASS7V.CLEAN.ADVANCED_1", 
+                                "output": "error"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "PREDICATE": [
+                            "within"
+                        ], 
+                        "INTERSECT": {
+                            "values": {
+                                "name": "VECTORLAYER_INPOLY"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:extractbylocation", 
+                    "description": "Extract by location"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SCRIPTMERGEALLLINESINLAYER_1": {
+                "values": {
+                    "name": "SCRIPTMERGEALLLINESINLAYER_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 352.0, 
+                            "x": 776.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "Input_lines": {
+                            "values": {
+                                "alg": "GRASS7V.CLEAN_2", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "script:mergealllinesinlayer", 
+                    "description": "Merge all lines in layer"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASS7V.CLEAN_2": {
+                "values": {
+                    "name": "GRASS7V.CLEAN_2", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 275.0, 
+                            "x": 710.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": -1.0, 
+                        "GRASS_MIN_AREA_PARAMETER": 0.0001, 
+                        "tool": 0, 
+                        "threshold": {
+                            "values": {
+                                "name": "NUMBER_THRESHOLD3TOREMOVEDANGLES"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "input": {
+                            "values": {
+                                "alg": "GRASS7V.CLEAN_1", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:v.clean", 
+                    "description": "v.clean - Toolset for cleaning topology of vector map."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASS7V.TO.POINTS_1": {
+                "values": {
+                    "name": "GRASS7V.TO.POINTS_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 176.0, 
+                            "x": 155.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "use": 1, 
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": -1.0, 
+                        "GRASS_MIN_AREA_PARAMETER": 0.0001, 
+                        "-i": true, 
+                        "GRASS_OUTPUT_TYPE_PARAMETER": 0, 
+                        "input": {
+                            "values": {
+                                "alg": "QGISPOLYGONSTOLINES_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "dmax": {
+                            "values": {
+                                "name": "STRING_MAXDIST"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:v.to.points", 
+                    "description": "v.to.points - Create points along input lines"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASS7V.CLEAN_1": {
+                "values": {
+                    "name": "GRASS7V.CLEAN_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 191.0, 
+                            "x": 656.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": -1.0, 
+                        "GRASS_MIN_AREA_PARAMETER": 0.0001, 
+                        "tool": 2, 
+                        "threshold": {
+                            "values": {
+                                "name": "NUMBER_THRESHOLDTOREMOVEDANGLES2"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "input": {
+                            "values": {
+                                "alg": "QGISEXTRACTBYLOCATION_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:v.clean", 
+                    "description": "v.clean - Toolset for cleaning topology of vector map."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "GRASS7V.CLEAN.ADVANCED_1": {
+                "values": {
+                    "name": "GRASS7V.CLEAN.ADVANCED_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 399.0, 
+                            "x": 296.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": -1.0, 
+                        "GRASS_MIN_AREA_PARAMETER": 0.0001, 
+                        "tool": "break,rmdupl,rmdangle", 
+                        "threshold": {
+                            "values": {
+                                "name": "NUMBER_THRESHOLD1TOREMOVEDANGLES"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "input": {
+                            "values": {
+                                "alg": "QGISPOLYGONSTOLINES_2", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass7:v.clean.advanced", 
+                    "description": "v.clean.advanced - Toolset for cleaning topology of vector map (Advanced)."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
