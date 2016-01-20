@@ -57,8 +57,8 @@
                 "values": {
                     "pos": {
                         "values": {
-                            "y": 231.0, 
-                            "x": 875.0
+                            "y": 226.0, 
+                            "x": 871.0
                         }, 
                         "class": "point"
                     }, 
@@ -144,7 +144,7 @@
             "ALG_VERSION": "1.0", 
             "ALG_HELP_CREATOR": "Alexander Muriy\n\n(Institute Of Environmental Geoscience [IEG \nRAS], Moscow, Russia)\n[amuriy AT gmail DOT com]"
         }, 
-        "group": "Custom", 
+        "group": "Example models", 
         "name": "Skeleton of polygon", 
         "algs": {
             "QGISPOLYGONSTOLINES_2": {
@@ -204,9 +204,39 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
-            "QGISINTERSECTION_1": {
+            "QGISSINGLEPARTSTOMULTIPART_1": {
                 "values": {
-                    "name": "QGISINTERSECTION_1", 
+                    "name": "QGISSINGLEPARTSTOMULTIPART_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 410.0, 
+                            "x": 883.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISFIELDCALCULATOR_1", 
+                                "output": "OUTPUT_LAYER"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "FIELD": "id"
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:singlepartstomultipart", 
+                    "description": "Singleparts to multipart"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISINTERSECTION_2": {
+                "values": {
+                    "name": "QGISINTERSECTION_2", 
                     "paramsFolded": true, 
                     "outputs": {
                         "OUTPUT": {
@@ -214,8 +244,8 @@
                                 "description": "Skeleton line(s)", 
                                 "pos": {
                                     "values": {
-                                        "y": 550.0, 
-                                        "x": 883.0
+                                        "y": 560.0, 
+                                        "x": 887.0
                                     }, 
                                     "class": "point"
                                 }
@@ -225,8 +255,8 @@
                     }, 
                     "pos": {
                         "values": {
-                            "y": 505.0, 
-                            "x": 683.0
+                            "y": 489.0, 
+                            "x": 764.0
                         }, 
                         "class": "point"
                     }, 
@@ -241,8 +271,8 @@
                         }, 
                         "INPUT": {
                             "values": {
-                                "alg": "SCRIPTMERGEALLLINESINLAYER_1", 
-                                "output": "Merged_lines"
+                                "alg": "QGISSINGLEPARTSTOMULTIPART_1", 
+                                "output": "OUTPUT"
                             }, 
                             "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
                         }
@@ -283,6 +313,41 @@
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
+            "QGISFIELDCALCULATOR_1": {
+                "values": {
+                    "name": "QGISFIELDCALCULATOR_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 341.0, 
+                            "x": 788.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "FIELD_TYPE": 1, 
+                        "NEW_FIELD": true, 
+                        "INPUT_LAYER": {
+                            "values": {
+                                "alg": "GRASS7V.CLEAN_2", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "FIELD_PRECISION": 3.0, 
+                        "FIELD_LENGTH": 10.0, 
+                        "FORMULA": "1", 
+                        "FIELD_NAME": "id"
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:fieldcalculator", 
+                    "description": "Field calculator"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
             "QGISEXTRACTBYLOCATION_1": {
                 "values": {
                     "name": "QGISEXTRACTBYLOCATION_1", 
@@ -318,35 +383,6 @@
                     "active": true, 
                     "consoleName": "qgis:extractbylocation", 
                     "description": "Extract by location"
-                }, 
-                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
-            }, 
-            "SCRIPTMERGEALLLINESINLAYER_1": {
-                "values": {
-                    "name": "SCRIPTMERGEALLLINESINLAYER_1", 
-                    "paramsFolded": true, 
-                    "outputs": {}, 
-                    "pos": {
-                        "values": {
-                            "y": 352.0, 
-                            "x": 776.0
-                        }, 
-                        "class": "point"
-                    }, 
-                    "outputsFolded": true, 
-                    "dependencies": [], 
-                    "params": {
-                        "Input_lines": {
-                            "values": {
-                                "alg": "GRASS7V.CLEAN_2", 
-                                "output": "output"
-                            }, 
-                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
-                        }
-                    }, 
-                    "active": true, 
-                    "consoleName": "script:mergealllinesinlayer", 
-                    "description": "Merge all lines in layer"
                 }, 
                 "class": "processing.modeler.ModelerAlgorithm.Algorithm"
             }, 
