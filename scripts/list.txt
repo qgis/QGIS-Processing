@@ -1,39 +1,41 @@
 Batch_replace_in_string_via_regex_dictionary.py,1,Batch replace in string via regex dictionary
-Buffer Contour.py,1,Buffer Contour
-classification_by_decision_tree.py,1,Classificaton by decision tree
+Buffer Contour.py,1.0,Buffer Contour
+CSV_R-G-B_to_categorized_style.py,1.1,CSV R-G-B to categorized style
+CSV_RGB_or_HEX_to_categorized_style.py,1.1,CSV RGB or HEX to categorized style
 Contour.py,1,Contour
 Create_rasters_from_canvas_for_each_vector_layer_feature_extent.py,1,Create rasters from canvas for each vector layer feature extent
 Create_tiling_from_vector_layer.py,1,Create tiling from vector layer
-Create_vector_layer_from_Postgis_table.py,1,Create vector layer from Postgis table
-Create_vector_layer_from_SQL_Query.py,1,Create vector layer from SQL Query
-CSV_R-G-B_to_categorized_style.py,1,CSV R-G-B to categorized style
-CSV_RGB_or_HEX_to_categorized_style.py,1,CSV RGB or HEX to categorized style
+Create_vector_layer_from_Postgis_table.py,1.0,Create vector layer from Postgis table
+Create_vector_layer_from_SQL_Query.py,1.0,Create vector layer from SQL Query
 Cut_by_field.py,1,Cut by field
-Define_1_raster_layer_properties.py,1,Define 1 raster layer properties
-Define_1_vector_layer_properties.py,1,Define 1 vector layer properties
-Define_vector_layer_properties.py,1,Define vector layer properties
+Define_1_raster_layer_properties.py,1.0,Define 1 raster layer properties
+Define_1_vector_layer_properties.py,1.0,Define 1 vector layer properties
+Define_vector_layer_properties.py,1.0,Define vector layer properties
+EquivalentNumField.py,1.0,Create equivalent numerical field
 Extract_raster_values_to_CSV.py,1,Extract raster values to CSV
 Extract_raster_values_to_shapefile.py,1,Extract raster values to shapefile
-Fill_holes.py,1,Fill holes
+Fill_holes.py,1.0,Fill holes
+FrequencyStats.py,0.1,FrequencyStats
 Hex_grid_from_layer_bounds.py,1,Hex grid from layer bounds
 Keep_n_biggest_parts.py,1,Keep n biggest parts
-Number_of_unique_values_in_classes.py,1,Number of unique values in classes
+Merge_all_lines_in_layer.py,1.0,Merge all lines in layer
 Points on crossing lines.py,1,Points on crossing lines
 Points on touching lines.py,1,Points on touching lines
 Points_from_vector.py,1,Points from vector
-predominant_category.py,1,Assign predominant category
-pygraticule.py,1,Lines graticule
-Read_file_content_into_string.py,1,Read file content into string
+Read_file_content_into_string.py,1.0,Read file content into string
 Remove_parts.py,1,Remove parts
-Save_features_filtered_by_expression.py,1,Save features filtered by expression
+Save_features_filtered_by_expression.py,1.0,Save features filtered by expression
 Save_selected_features.py,1,Save selected features
-Set_multiple_raster_layers_properties.py,1,Set multiple raster layers properties
+Set_multiple_raster_layers_properties.py,1.0,Set multiple raster layers properties
 Split_vector_layer_by_attribute.py,1,Split vector layer by attribute
-Square_grid_from_layer_extent.py,1,Square grid from layer extent
+Square_grid_from_layer_extent.py,1.0,Square grid from layer extent
 Summarize.py,1,Summarize
 Unique_values_count.py,1,Unique values count
-Frequency_analysis.py,1,Frequency analysis
-ellipsoidal_area.py,1,Ellipsoidal area
+classification_by_decision_tree.py,1,Classification by decision tree
 distance_lines_between_points.py,1,Distance lines between points
-EquivalentNumField.py,1,Create equivalent numerical field
-realcentroid_algorithm.py,1,Real centroid
+ellipsoidal_area.py,1.0,Ellipsoidal area
+make_landsat8_footprints.py,1,Make landsat8 footprints
+predominant_category.py,1,Predominant category
+pygraticule.py,1.1,Lines graticule
+realcentroid_algorithm.py,1.0,Real centroid
+spatial_cross_join_attributes.py,1.0,Spatial cross join attributes
