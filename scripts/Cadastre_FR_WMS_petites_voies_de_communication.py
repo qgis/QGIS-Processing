@@ -6,10 +6,8 @@
 ##Champ_nom_de_commune=field Couche_commune
 ##Code_EPSG=string 2154
 
-from qgis.core import *
-from qgis.gui import *
-from qgis.utils import *
-import os
+from qgis.core import QgsRasterLayer,QgsMapLayerRegistry
+from qgis.utils import iface,QgsMessageBar
 
 layer = processing.getObject(Couche_commune)
 
