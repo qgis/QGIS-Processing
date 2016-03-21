@@ -28,7 +28,7 @@ if EPSG_code == '2154' or EPSG_code == '3942' or EPSG_code == '3943' or EPSG_cod
     for c_insee, n_couche in Lt  :
 
         #AMORCES_CAD,LIEUDIT,CP.CadastralParcel,SUBFISCAL,CLOTURE,DETAIL_TOPO,HYDRO,VOIE_COMMUNICATION,BU.Building,BORNE_REPERE
-        urlWithParams = "url=http://inspire.cadastre.gouv.fr/scpc/"+c_insee+".wms?contextualWMSLegend=0&crs=EPSG:"+EPSG_code+"&dpiMode=7&featureCount=10&format=image/png&layers=AMORCES_CAD&layers=LIEUDIT&layers=CP.CadastralParcel&layers=SUBFISCAL&layers=CLOTURE&layers=DETAIL_TOPO&layers=HYDRO&layers=VOIE_COMMUNICATION&layers=BU.Building&layers=BORNE_REPERE&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles="
+        urlWithParams = "url=http://inspire.cadastre.gouv.fr/scpc/"+c_insee+".wms?contextualWMSLegend=0&crs=EPSG:"+EPSG_code+"&dpiMode=7&featureCount=10&format=image/png&layers=AMORCES_CAD&layers=LIEUDIT&layers=CP.CadastralParcel&layers=SUBFISCAL&layers=CLOTURE&layers=DETAIL_TOPO&layers=HYDRO&layers=VOIE_COMMUNICATION&layers=BU.Building&layers=BORNE_REPERE&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&maxHeight=1024&maxWidth=1280"
 
         rlayer = QgsRasterLayer(urlWithParams, 'Cadastre_'+n_couche+'_'+c_insee, 'wms')
 
