@@ -1,16 +1,12 @@
 ##Basic statistics=group
+##showplots
 ##Layer=vector
 ##Field=Field Layer
 ##by=number 0.1
 ##Output=output raster
-library("gstat")
-library("rgl")
-library("spatstat")
-library("maptools")
-install.packages("pls")
-library ("pls")
-library("automap")
-Y<-as.factor(Layer[[Field]])
+library(automap)
+library(raster)
+Y<-as.factor(LayerField)
 attribut<-as.data.frame(Y)
 A<-as.numeric(Y)
 for(j in (1:length(levels(Y))))
@@ -34,8 +30,8 @@ coordinates(Grille)=c("X","Y")
 gridded(Grille)<-TRUE
 Mesure<- data.frame(LON=coords[,1], LAT=coords[,2],A)
 coordinates(Mesure)<-c("LON","LAT")
-kriging_result = autoKrige(A~1, Mesure, Grille,
-model=c("Cir","Lin","Bes","Wav","Hol","Leg","Per","Pen","Mat","Exc","Spl","Ste"))
-library(raster)
-result<-raster(prediction)
-Output<-result
+variogram = autofitVariogram(A~1, Mesure)
+plot(variogram)
+kriging_result = autoKrige(A~1, Mesure, Grille,model=c("Cir","Lin","Bes","Wav","Hol","Leg","Per","Pen","Mat","Exc","Spl","Ste"))
+prediction = raster(kriging_result$krige_output)
+Output<-prediction

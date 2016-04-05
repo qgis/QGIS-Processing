@@ -25,7 +25,7 @@ Inverse_Distance_Weigthing.rsx,1,Inverse Distance Weigthing
 Inverse_Distance_Weigthing_with_method_selection.rsx,1,Inverse Distance Weigthing with method selection
 Kernel_density_estimation.rsx,1,Kernel density estimation
 Kolmogrov-Smirnov_test.rsx,1,Kolmogrov-Smirnov test
-Kriging.rsx,1,Kriging
+Kriging.rsx,1.1,Kriging
 Kriging_with_model_selection.rsx,1,Kriging with model selection
 Minimum_convex_polygon.rsx,1,Minimum convex polygon
 Monte-Carlo_spatial_randomness.rsx,1,Monte-Carlo spatial randomness
