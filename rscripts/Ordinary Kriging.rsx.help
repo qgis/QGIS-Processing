@@ -1,0 +1,46 @@
+(dp0
+S'kriging_prediction'
+p1
+Vthe ordinary kriging prediction
+p2
+sS'ALG_DESC'
+p3
+V
+p4
+sS'ALG_CREATOR'
+p5
+VMarcos Angelini\u000aGuillermo Olmedo\u000a\u000aINTA - Argentina	
+p6
+sS'nugget'
+p7
+Vthe estimated nugget, you can use "variogram fitting" to estimate this.
+p8
+sS'layer'
+p9
+Vthe point layer to krige
+p10
+sS'psill'
+p11
+Vthe estimated partial sill, you can use "variogram fitting" to estimate this.
+p12
+sS'field'
+p13
+Vthe field to krige
+p14
+sS'range'
+p15
+Vthe estimated range, you can use "variogram fitting" to estimate this.
+p16
+sS'ALG_HELP_CREATOR'
+p17
+VMarcos Angelini\u000aGuillermo Olmedo\u000a\u000aINTA - Argentina	
+p18
+sS'Model'
+p19
+VThe variogram model you fitted:\u000aUse "Exp" for exponential; "Sph" for spherical; "Gau" for gaussian; "Mat" for Matheron, etc. \u000a\u000aYou can check gstat help for more available models\u000a
+p20
+sS'kriging_variance'
+p21
+Vthe ordinary kriging prediction variance
+p22
+s.

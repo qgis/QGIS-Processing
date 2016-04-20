@@ -1,0 +1,25 @@
+(dp0
+S'ALG_DESC'
+p1
+V
+p2
+sS'ALG_CREATOR'
+p3
+VMarcos Angelini\u000aGuillermo Olmedo\u000a\u000aINTA - Argentina	
+p4
+sS'layer'
+p5
+Vthe point layer to fit the variogram function
+p6
+sS'field'
+p7
+Vthe field to fit the variogram function
+p8
+sS'RPLOTS'
+p9
+g2
+sS'ALG_HELP_CREATOR'
+p10
+VMarcos Angelini\u000aGuillermo Olmedo\u000a\u000aINTA - Argentina	
+p11
+s.
