@@ -25,26 +25,34 @@ model2<-Models[model+1]
 # coordinates(layer) <- ~ Long + Lat
 # plot(layer)
 
-create_new_data_ch <- function (obj)
+create_new_data_ch <- function (layer)
 {
-  convex_hull = chull(coordinates(obj)[, 1], coordinates(obj)[,2])
+  convex_hull = chull(coordinates(layer)[, 1], coordinates(layer)[,2])
   convex_hull = c(convex_hull, convex_hull[1])
-  d = Polygon(obj[convex_hull, ])
-  new_data = spsample(d, 5000, type = "regular")
+  d = Polygon(layer[convex_hull, ])
+  if(!is.projected(layer) | Resolution== 0){new_data = spsample(d, 5000, 
+                                                              type = "regular")}
+  if(is.projected(layer)){
+    new_data = spsample(d, n= 1, cellsize=c(Resolution,Resolution),
+                      type="regular")}
   gridded(new_data) = TRUE
-  attr(new_data, "proj4string") <-obj@proj4string
+  attr(new_data, "proj4string") <-layer@proj4string
   return(new_data)
 }
 
 create_new_data_ext <- function (layer){ 
   bottomright <- c(layer@bbox[1], layer@bbox[2])
   topleft <- c(layer@bbox[3], layer@bbox[4])
-  asd <- SpatialPolygons(
+  d <- SpatialPolygons(
     list(Polygons(list(Polygon(coords = matrix(
       c(topleft[1],bottomright[1], bottomright[1],topleft[1],topleft[1],
         topleft[2], topleft[2], bottomright[2], 
         bottomright[2],topleft[2]), ncol=2, nrow= 5))), ID=1)))
-  new_data = spsample(asd, 5000, type = "regular")
+  if(!is.projected(layer) | Resolution== 0){new_data = spsample(d, 5000, 
+                                                              type = "regular")}
+  if(is.projected(layer)){
+    new_data = spsample(d, n= 1, cellsize=c(Resolution,Resolution),
+                        type="regular")}
   gridded(new_data) = TRUE
   attr(new_data, "proj4string") <-layer@proj4string
   return(new_data)
@@ -63,7 +71,7 @@ layer <- layer[!is.na(layer$field),]
 g = gstat(id = field, formula = field~1, data = layer)
 vg = variogram(g)
 
-if(Estimate_range_and_psill_initial_values_from_sample_variogram){range=NA} 
+if(Estimate_range_and_psill_initial_values_from_sample_variogram){range=NA}
 if(Estimate_range_and_psill_initial_values_from_sample_variogram){psill=NA}
 
 vgm = vgm(nugget=nugget, psill=psill, range=range, model=model2)
