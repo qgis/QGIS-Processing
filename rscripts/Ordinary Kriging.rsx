@@ -32,7 +32,7 @@ create_new_data_ch <- function (layer)
   d = Polygon(layer[convex_hull, ])
   if(!is.projected(layer) | Resolution== 0){new_data = spsample(d, 5000, 
                                                               type = "regular")}
-  if(is.projected(layer)){
+  if(is.projected(layer)  & Resolution!= 0){
     new_data = spsample(d, n= 1, cellsize=c(Resolution,Resolution),
                       type="regular")}
   gridded(new_data) = TRUE
@@ -50,7 +50,7 @@ create_new_data_ext <- function (layer){
         bottomright[2],topleft[2]), ncol=2, nrow= 5))), ID=1)))
   if(!is.projected(layer) | Resolution== 0){new_data = spsample(d, 5000, 
                                                               type = "regular")}
-  if(is.projected(layer)){
+  if(is.projected(layer) & Resolution != 0){
     new_data = spsample(d, n= 1, cellsize=c(Resolution,Resolution),
                         type="regular")}
   gridded(new_data) = TRUE
@@ -81,5 +81,8 @@ plot(vg, vgm, plot.numbers = TRUE)
 if(Local_kriging==FALSE){prediction = krige(field~1, layer, newdata = mask, vgm)}
 if(Local_kriging==TRUE){prediction = krige(field~1, layer, newdata = mask, vgm, nmax=Number_of_nearest_observations)}
 >if(Show_Sum_of_Square_Errors==TRUE){paste("SSE:", attr(vgm, "SSErr"))}
+>if(!is.projected(layer)){warning(paste0("'layer' isn't projected.\n", "Resolution was not used. Interpolation was done over 5000 cells"))}
+>if(is.projected(layer) & Resolution == 0){warning("Resolution was set to 0. Final resolution estimated from data")}
+
 kriging_prediction = raster(prediction)
 kriging_variance = raster(prediction["var1.var"])
