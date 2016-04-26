@@ -61,6 +61,7 @@ create_new_data_ext <- function (layer){
 if(Extent==0){mask<-create_new_data_ch(layer)}
 if(Extent==1){mask<-create_new_data_ext(layer)}
 
+field <- make.names(field)
 names(layer)[names(layer)==field]="field"
 
 layer$field <- as.numeric(as.character(layer$field))
