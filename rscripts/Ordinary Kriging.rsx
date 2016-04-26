@@ -21,10 +21,6 @@ library('sp')
 Models<-c("Exp","Sph","Gau","Mat")
 model2<-Models[model+1]
 
-# layer  <- read.csv2("Proyectos/Eventuales/AguasCluster/Agua puntos Todos.csv")
-# coordinates(layer) <- ~ Long + Lat
-# plot(layer)
-
 create_new_data_ch <- function (layer)
 {
   convex_hull = chull(coordinates(layer)[, 1], coordinates(layer)[,2])
