@@ -78,8 +78,8 @@ plot(vg, vgm, plot.numbers = TRUE)
 if(Local_kriging==FALSE){prediction = krige(field~1, layer, newdata = mask, vgm)}
 if(Local_kriging==TRUE){prediction = krige(field~1, layer, newdata = mask, vgm, nmax=Number_of_nearest_observations)}
 >if(Show_Sum_of_Square_Errors==TRUE){paste("SSE:", attr(vgm, "SSErr"))}
->if(!is.projected(layer)){warning(paste0("'layer' isn't projected.\n", "Resolution was not used. Interpolation was done over 5000 cells"))}
->if(is.projected(layer) & Resolution == 0){warning("Resolution was set to 0. Final resolution estimated from data")}
+#>if(!is.projected(layer)){warning(paste0("'layer' isn't projected.\n", "Resolution was not used. Interpolation was done over 5000 cells"))}
+#>if(is.projected(layer) & Resolution == 0){warning("Resolution was set to 0. Final resolution estimated from data")}
 
 kriging_prediction = raster(prediction)
 kriging_variance = raster(prediction["var1.var"])
