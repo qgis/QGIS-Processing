@@ -2,6 +2,7 @@ Batch_replace_in_string_via_regex_dictionary.py,1,Batch replace in string via re
 Buffer Contour.py,1.0,Buffer Contour
 CSV_R-G-B_to_categorized_style.py,1.1,CSV R-G-B to categorized style
 CSV_RGB_or_HEX_to_categorized_style.py,1.1,CSV RGB or HEX to categorized style
+Cadastre_FR_WMS.py,1.0,Cadastre FR WMS
 Contour.py,1,Contour
 Create_rasters_from_canvas_for_each_vector_layer_feature_extent.py,1,Create rasters from canvas for each vector layer feature extent
 Create_tiling_from_vector_layer.py,1,Create tiling from vector layer
@@ -11,7 +12,7 @@ Cut_by_field.py,1,Cut by field
 Define_1_raster_layer_properties.py,1.0,Define 1 raster layer properties
 Define_1_vector_layer_properties.py,1.0,Define 1 vector layer properties
 Define_vector_layer_properties.py,1.0,Define vector layer properties
-EquivalentNumField.py,1.0,Create equivalent numerical field
+EquivalentNumField.py,1.0,EquivalentNumField
 Extract_raster_values_to_CSV.py,1,Extract raster values to CSV
 Extract_raster_values_to_shapefile.py,1,Extract raster values to shapefile
 Fill_holes.py,1.0,Fill holes
@@ -22,6 +23,7 @@ Merge_all_lines_in_layer.py,1.0,Merge all lines in layer
 Points on crossing lines.py,1,Points on crossing lines
 Points on touching lines.py,1,Points on touching lines
 Points_from_vector.py,1,Points from vector
+Quick_PostgreSQL_Model_Builder_from_description_stored_in_table_sheet.py,1.0,Quick PostgreSQL Model Builder from description stored in table sheet
 Read_file_content_into_string.py,1.0,Read file content into string
 Remove_parts.py,1,Remove parts
 Save_features_filtered_by_expression.py,1.0,Save features filtered by expression
@@ -31,11 +33,11 @@ Split_vector_layer_by_attribute.py,1,Split vector layer by attribute
 Square_grid_from_layer_extent.py,1.0,Square grid from layer extent
 Summarize.py,1,Summarize
 Unique_values_count.py,1,Unique values count
-classification_by_decision_tree.py,1,Classification by decision tree
-distance_lines_between_points.py,1,Distance lines between points
-ellipsoidal_area.py,1.0,Ellipsoidal area
-make_landsat8_footprints.py,1,Make landsat8 footprints
-predominant_category.py,1,Predominant category
-pygraticule.py,1.1,Lines graticule
-realcentroid_algorithm.py,1.0,Real centroid
-spatial_cross_join_attributes.py,1.0,Spatial cross join attributes
+classification_by_decision_tree.py,1,classification by decision tree
+distance_lines_between_points.py,1,distance lines between points
+ellipsoidal_area.py,1.0,ellipsoidal area
+make_landsat8_footprints.py,1,make landsat8 footprints
+predominant_category.py,1,predominant category
+pygraticule.py,1.1,pygraticule
+realcentroid_algorithm.py,1.0,realcentroid algorithm
+spatial_cross_join_attributes.py,1.0,spatial cross join attributes
