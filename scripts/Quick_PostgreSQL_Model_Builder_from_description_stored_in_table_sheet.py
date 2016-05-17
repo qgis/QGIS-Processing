@@ -4,16 +4,16 @@
 ##Field_with_table_name=field Layer_containing_tables_description
 ##Field_with_table_schema=field Layer_containing_tables_description
 ##Field_with_table_comment=field Layer_containing_tables_description
+##Field_with_table_primary_key=field Layer_containing_tables_description
 ##Layer_containing_columns_description=table
 ##Field_with_column_table_name=field Layer_containing_columns_description
 ##Field_with_column_name=field Layer_containing_columns_description
 ##Field_with_column_type=field Layer_containing_columns_description
 ##Field_with_column_not_null_status=field Layer_containing_columns_description
-##Field_with_column_primary_key_status=field Layer_containing_columns_description
 ##Field_with_column_constraint=field Layer_containing_columns_description
 ##Field_with_column_comment=field Layer_containing_columns_description
 ##Field_with_column_index_status=field Layer_containing_columns_description
-##Create_needed_schemas=boolean True
+##Create_needed_schemas=boolean False
 ##sql=output string
 ##Output_SQL_file=output file
 
@@ -47,19 +47,17 @@ class qgisPostgresqlQuickModeler():
         return sql
 
 
-    def addColumn(self, tname, cname, ctype, cpkey='', cconstraint='', cnotnull='', ccomment='', cindex=''):
+    def addColumn(self, tname, cname, ctype, cconstraint='', cnotnull='', ccomment='', cindex=''):
         sql = ''
         notnull = 'NOT NULL' if cnotnull == '1' else ''
-        pkey = 'PRIMARY KEY' if cpkey == '1' else ''
         index = True if cindex == 1 else False
 
         # Add column
-        sql+= '\nALTER TABLE "%s" ADD COLUMN "%s" %s %s %s ;\n' % (
+        sql+= '\nALTER TABLE "%s" ADD COLUMN "%s" %s %s ;\n' % (
             tname,
             cname,
             ctype,
-            notnull,
-            pkey
+            notnull
         )
 
         # Add constraint
@@ -86,6 +84,14 @@ class qgisPostgresqlQuickModeler():
 
         return sql
 
+    def addPkey(self, tname, tpkey=''):
+        sql = ''
+        if tpkey:
+            sql+= 'ALTER TABLE "%s" ADD PRIMARY KEY (%s);\n' % (
+                tname,
+                tpkey
+            )
+        return sql
 
 # Get layers objects
 tlayer = processing.getObject(Layer_containing_tables_description)
@@ -95,12 +101,12 @@ clayer = processing.getObject(Layer_containing_columns_description)
 t_name = Field_with_table_name
 t_schema = Field_with_table_schema
 t_comment = Field_with_table_comment
+t_pkey = Field_with_table_primary_key
 
 c_table_name = Field_with_column_table_name
 c_name = Field_with_column_name
 c_type = Field_with_column_type
 c_not_null = Field_with_column_not_null_status
-c_pkey = Field_with_column_primary_key_status
 c_constraint = Field_with_column_constraint
 c_comment = Field_with_column_comment
 c_index = Field_with_column_index_status
@@ -135,12 +141,17 @@ if tlayer and clayer:
                 cfeat[c_table_name],
                 cfeat[c_name],
                 cfeat[c_type],
-                cfeat[c_pkey],
                 cfeat[c_constraint],
                 cfeat[c_not_null],
                 cfeat[c_comment],
                 cfeat[c_index]
             )
+            
+        # Add primary key(s)
+        sql+= modeler.addPkey(
+            tfeat[t_name],
+            tfeat[t_pkey]
+        )            
 
 sql = 'BEGIN;\n' + sql + '\nCOMMIT;'
 try:
