@@ -6,7 +6,7 @@
 ##Output=output raster
 library(automap)
 library(raster)
-Y<-as.factor(LayerField)
+Y<-as.factor(Layer[[Field]]) 
 attribut<-as.data.frame(Y)
 A<-as.numeric(Y)
 for(j in (1:length(levels(Y))))
