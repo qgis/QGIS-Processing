@@ -41,3 +41,4 @@ predominant_category.py,1,predominant category
 pygraticule.py,1.1,pygraticule
 realcentroid_algorithm.py,1.0,realcentroid algorithm
 spatial_cross_join_attributes.py,1.0,spatial cross join attributes
+SilviLiDAR.py,1.0,SilviLiDAR
