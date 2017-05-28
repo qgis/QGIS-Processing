@@ -1,6 +1,8 @@
-model_IDW.model,1,model IDW
-model_PCA.model,1,model PCA
-modelwithin.model,1,Model within model
-mult.model,1,Multiply two layers
-rasterizeandfill.model,1,Rasterize and fill
-watersheds.model,1,Watersheds from DEM
+model_IDW.model,1,model IDW.mo
+model_PCA.model,1,model PCA.mo
+modelwithin.model,1,modelwithin.mo
+mult.model,1,mult.mo
+point2polygon.model,1,point2polygon.mo
+polygon_skeleton.model,1,polygon skeleton.mo
+rasterizeandfill.model,1,rasterizeandfill.mo
+watersheds.model,1,watersheds.mo

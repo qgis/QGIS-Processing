@@ -23,12 +23,13 @@ Merge_all_lines_in_layer.py,1.0,Merge all lines in layer
 Points on crossing lines.py,1,Points on crossing lines
 Points on touching lines.py,1,Points on touching lines
 Points_from_vector.py,1,Points from vector
-Quick_PostgreSQL_Model_Builder_from_description_stored_in_table_sheet.py,1.0,Quick PostgreSQL Model Builder from description stored in table sheet
+Quick_PostgreSQL_Model_Builder_from_description_stored_in_table_sheet.py,1.1,Quick PostgreSQL Model Builder from description stored in table sheet
 Read_file_content_into_string.py,1.0,Read file content into string
 Remove_parts.py,1,Remove parts
 Save_features_filtered_by_expression.py,1.0,Save features filtered by expression
 Save_selected_features.py,1,Save selected features
 Set_multiple_raster_layers_properties.py,1.0,Set multiple raster layers properties
+SilviLiDAR.py,1.0,SilviLiDAR
 Split_vector_layer_by_attribute.py,1,Split vector layer by attribute
 Square_grid_from_layer_extent.py,1.0,Square grid from layer extent
 Summarize.py,1,Summarize
@@ -41,4 +42,3 @@ predominant_category.py,1,predominant category
 pygraticule.py,1.1,pygraticule
 realcentroid_algorithm.py,1.0,realcentroid algorithm
 spatial_cross_join_attributes.py,1.0,spatial cross join attributes
-SilviLiDAR.py,1.0,SilviLiDAR
