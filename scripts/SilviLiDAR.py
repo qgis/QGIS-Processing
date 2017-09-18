@@ -22,8 +22,6 @@ import glob
 import re
 import sys
 
-import time
-
 from qgis.core import *
 import qgis.utils
 from qgis.utils import iface
