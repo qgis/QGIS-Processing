@@ -1,3 +1,4 @@
+Assign_prj.py,0.1,Assign prj
 Batch_replace_in_string_via_regex_dictionary.py,1,Batch replace in string via regex dictionary
 Buffer Contour.py,1.0,Buffer Contour
 CSV_R-G-B_to_categorized_style.py,1.1,CSV R-G-B to categorized style
@@ -12,11 +13,13 @@ Cut_by_field.py,1,Cut by field
 Define_1_raster_layer_properties.py,1.0,Define 1 raster layer properties
 Define_1_vector_layer_properties.py,1.0,Define 1 vector layer properties
 Define_vector_layer_properties.py,1.0,Define vector layer properties
+DissolveWithStats.py,0.4,DissolveWithStats
 EquivalentNumField.py,1.0,EquivalentNumField
 Extract_raster_values_to_CSV.py,1,Extract raster values to CSV
 Extract_raster_values_to_shapefile.py,1,Extract raster values to shapefile
 Fill_holes.py,1.0,Fill holes
 FrequencyStats.py,0.1,FrequencyStats
+Generate_Unique_values_renderer.py,1,Generate Unique values renderer
 Hex_grid_from_layer_bounds.py,1,Hex grid from layer bounds
 Keep_n_biggest_parts.py,1,Keep n biggest parts
 Merge_all_lines_in_layer.py,1.0,Merge all lines in layer
