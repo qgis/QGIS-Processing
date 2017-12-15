@@ -70,7 +70,7 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
     
     #defino un par de variables con el nombre del archivo y su abreviatura. Pensado para la denominacion estandar de los archivos LiDAR del PNOA
     tronco=las[:-4]
-    patron = re.compile('\d{3}\-|_\d{4}')
+    patron = re.compile(('\d{3}\_\d{4}|\d{3}\-\d{4}'))
     troncoresumido=patron.findall(las)[0].replace("-","_")
     
     #definicion de parametros funciones y rutas
@@ -194,7 +194,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                 
             #defino funcion para crear una capa shape que generalice los datos de un raster    filtro es el nivel de generalizacion entre 0 y 1
             def agregado(rasterdeentrada,filtro):
-                print "paso0 de agregado"
                 try:
                     #filtro para rellenar huecos 
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1.tif')
@@ -208,7 +207,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1n.tif'),rasterdeentrada+str("1n"))
                     
                     #filtro y me quedo con lo mayor de 0,99
-                    print "paso1 de agregado"
                     calc = QgsRasterCalculator("'"+rasterdeentrada+'1n@1 > 0.9999999',
                                            os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif'),
                                            'GTiff',
@@ -221,7 +219,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif'),rasterdeentrada+str("1nf"))
                    
                     #filtro gausian para dar valor en funcion de los vecinos
-                    print "paso2 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif')
                     tipo=0  
                     sigma=1
@@ -236,7 +233,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2.tif'),rasterdeentrada+str("g2"))
                 
                     #filtro y me quedo con lo mayor de un valor 
-                    print "paso3 de agregado"
                     calc = QgsRasterCalculator("'"+rasterdeentrada+'g2@1 > '+str(filtro)+"'",
                                            os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2s.tif'),
                                            'GTiff',
@@ -249,7 +245,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2s.tif'),rasterdeentrada+str("g2s"))
                 
                     #filtro  filter clums eliminar los huecos menores de 1300 m2
-                    print "paso4 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2s.tif')  
                     min=13
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.tif')
@@ -272,7 +267,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'31.tif'),rasterdeentrada+str("31"))
 
                     #filtro mayorityffilter para dar valor en funcion de los vecinos
-                    print "paso6 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'31.tif')
                     mode=0
                     radius=1
@@ -286,7 +280,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'4.tif'),rasterdeentrada+str("4"))
                     
                     #filtro  filter clums eliminar los huecos
-                    print "paso6 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'4.tif')
                     min=5
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'6.tif')
@@ -295,7 +288,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'6.tif'),rasterdeentrada+str("6"))
 
                     #filtro para rellenar huecos pequenos
-                    print "paso7 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'6.tif')
                     distance=3
                     iterations=0
@@ -307,7 +299,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'7.tif'),rasterdeentrada+str("7"))
                     
                     #lo vectorizo
-                    print "paso 8 de agregado"
                     processing.runalg("gdalogr:polygonize",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'7.tif'),"DN",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'.shp'))
                     #seleciono lo que me interesa
                     lyr=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'.shp'),rasterdeentrada,"ogr")
@@ -318,7 +309,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
 
                     if nbrSelected > 0:
                         #guardo lo selecionado
-                        print "paso9 de agregado"
                         processing.runalg("qgis:saveselectedfeatures",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'.shp'),os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'2.shp'))
 
                         #calcula la superficie de esta capa pero no en todos los registros
@@ -339,7 +329,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                         layer.updateFields()
 
                         #selecciono las teselas mayor de una superficie dada.
-                        print "empiezo a selecionar los mayores de 2500"
                         layer2=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'2.shp'),rasterdeentrada+str("2"),"ogr")
                         QgsMapLayerRegistry.instance().addMapLayers([layer2])
                         selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"area" > 2500'))
@@ -347,16 +336,13 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                         if elementos >0:
                             selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"area" > 2500'))#lo repito porque se pierde
                             selecionado = layer2.setSelectedFeatures([s.id() for s in selection])
-                            print "guardo lo selecionado"
                             processing.runalg("qgis:saveselectedfeatures",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'2.shp'),os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.shp'))
                             layer3=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.shp'),rasterdeentrada+str("3"),"ogr")
                             QgsMapLayerRegistry.instance().addMapLayer(layer3)
                         else:
-                            print "Nada seleccionado"
                             pass
                         del(selection)
                         del(selecionado)
-                        print "todo bien"
                                       
                 except:
                     pass
@@ -506,25 +492,18 @@ def juntoshapes(busca,salida):
         lista2=files[len(files)/2:]
         out=os.path.join(carpeta,salida+"1.shp")
         entrada=";".join(lista1)
-        print "paso  inicio mergelayers"
         processing.runalg('saga:mergelayers',entrada,True,True,out)
         out=os.path.join(carpeta,salida+"2.shp")
         entrada=";".join(lista2)
         processing.runalg('saga:mergelayers',entrada,True,True,out)
     elif len(files) >1 and len(files) <=100:
-        print "paso  inicio mergelayers mi caso"
         processing.runalg('saga:mergelayers',entrada,True,True,out)
-        print "paso  inicio mergelayers mi caso ok"
     elif len(files) ==1:
-        print "paso  inicio guardo si solo 1"
-        #NUEVO
         layer2=QgsVectorLayer(files[0],"entrada","ogr")
         QgsMapLayerRegistry.instance().addMapLayers([layer2])
         selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"DN" > 0'))
         selecionado = layer2.setSelectedFeatures([s.id() for s in selection])
-        #NUEVO
         processing.runalg("qgis:saveselectedfeatures",files[0],out)
-        print "paso  inicio guardo si solo 1 ok"
     else:
         pass
     del(out)
