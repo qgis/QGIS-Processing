@@ -35,6 +35,11 @@ import processing
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+#compruebo la version de gdal que se esta utilizando
+versionsaga=processing.algs.saga.SagaUtils.getSagaInstalledVersion()
+print versionsaga
+
+
 #compruebo que capas estan cargadas en el proyecto al iniciar el script
 capasoriginales =QgsMapLayerRegistry.instance().mapLayers()
 
@@ -65,7 +70,7 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
     
     #defino un par de variables con el nombre del archivo y su abreviatura. Pensado para la denominacion estandar de los archivos LiDAR del PNOA
     tronco=las[:-4]
-    patron = re.compile('\d{3}\-\d{4}')
+    patron = re.compile(('\d{3}\_\d{4}|\d{3}\-\d{4}'))
     troncoresumido=patron.findall(las)[0].replace("-","_")
     
     #definicion de parametros funciones y rutas
@@ -189,7 +194,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                 
             #defino funcion para crear una capa shape que generalice los datos de un raster    filtro es el nivel de generalizacion entre 0 y 1
             def agregado(rasterdeentrada,filtro):
-                print "paso0 de agregado"
                 try:
                     #filtro para rellenar huecos 
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1.tif')
@@ -203,7 +207,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1n.tif'),rasterdeentrada+str("1n"))
                     
                     #filtro y me quedo con lo mayor de 0,99
-                    print "paso1 de agregado"
                     calc = QgsRasterCalculator("'"+rasterdeentrada+'1n@1 > 0.9999999',
                                            os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif'),
                                            'GTiff',
@@ -216,17 +219,20 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif'),rasterdeentrada+str("1nf"))
                    
                     #filtro gausian para dar valor en funcion de los vecinos
-                    print "paso2 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'1nf.tif')
-                    sigma=1#era0.2
+                    tipo=0  
+                    sigma=1
                     mode=1
-                    radius=5#era2
+                    radius=5
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2.tif')
-                    processing.runalg('saga:gaussianfilter', input, sigma, mode, radius, result)
+                    if versionsaga=="2.3.2":
+                        processing.runalg('saga:gaussianfilter', input, sigma, mode, radius,tipo, result)
+                    else:
+
+                        processing.runalg('saga:gaussianfilter', input, sigma, mode, radius,result)
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2.tif'),rasterdeentrada+str("g2"))
                 
                     #filtro y me quedo con lo mayor de un valor 
-                    print "paso3 de agregado"
                     calc = QgsRasterCalculator("'"+rasterdeentrada+'g2@1 > '+str(filtro)+"'",
                                            os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2s.tif'),
                                            'GTiff',
@@ -240,12 +246,16 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                 
                     #filtro  filter clums eliminar los huecos menores de 1300 m2
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'g2s.tif')  
-                    threshold=13
+                    min=13
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.tif')
-                    processing.runalg('saga:filterclumps', input, threshold, result)
+                    if versionsaga=="2.3.2":
+                        processing.runalg('gdalogr:sieve', input, min, tipo, result)
+                    else:
+                        processing.runalg('saga:filterclumps', input, min, result)
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.tif'),rasterdeentrada+str("3"))
 
                     #filtro para rellenar huecos pequenos
+                    print "paso5 de agregado"
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.tif')
                     distance=3
                     iterations=0
@@ -260,16 +270,21 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'31.tif')
                     mode=0
                     radius=1
-                    threshold=4#4
+                    threshold=4
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'4.tif')
-                    processing.runalg('saga:majorityfilter', input, mode, radius, threshold, result)
+                    if versionsaga=="2.3.2":
+                        processing.runalg('saga:majorityfilter', input, mode, radius, threshold,tipo, result)
+                    else:
+                        print "entra aqui"
+                        processing.runalg('saga:majorityfilter', input, mode, radius, threshold, result)
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'4.tif'),rasterdeentrada+str("4"))
                     
                     #filtro  filter clums eliminar los huecos
                     input=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'4.tif')
-                    threshold=5
+                    min=5
                     result=os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'6.tif')
-                    processing.runalg('saga:filterclumps', input, threshold, result)
+                    processing.runalg('gdalogr:sieve', input, min, tipo, result)
+
                     StringToRaster(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'6.tif'),rasterdeentrada+str("6"))
 
                     #filtro para rellenar huecos pequenos
@@ -285,7 +300,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                     
                     #lo vectorizo
                     processing.runalg("gdalogr:polygonize",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'7.tif'),"DN",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'.shp'))
-
                     #seleciono lo que me interesa
                     lyr=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'.shp'),rasterdeentrada,"ogr")
                     QgsMapLayerRegistry.instance().addMapLayers([lyr])
@@ -315,7 +329,6 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                         layer.updateFields()
 
                         #selecciono las teselas mayor de una superficie dada.
-                        print "empiezo a selecionar los mayores de 2500"
                         layer2=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'2.shp'),rasterdeentrada+str("2"),"ogr")
                         QgsMapLayerRegistry.instance().addMapLayers([layer2])
                         selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"area" > 2500'))
@@ -323,16 +336,13 @@ def exprimelidar(las, carpeta, crecimiento, fccbaja, fccterrazas, fccmedia, fcca
                         if elementos >0:
                             selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"area" > 2500'))#lo repito porque se pierde
                             selecionado = layer2.setSelectedFeatures([s.id() for s in selection])
-                            print "guardo lo selecionado"
                             processing.runalg("qgis:saveselectedfeatures",os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'2.shp'),os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.shp'))
                             layer3=QgsVectorLayer(os.path.join(carpeta,troncoresumido+'_'+rasterdeentrada+'3.shp'),rasterdeentrada+str("3"),"ogr")
                             QgsMapLayerRegistry.instance().addMapLayer(layer3)
                         else:
-                            print "Nada seleccionado"
                             pass
                         del(selection)
                         del(selecionado)
-                        print "todo bien"
                                       
                 except:
                     pass
@@ -489,6 +499,10 @@ def juntoshapes(busca,salida):
     elif len(files) >1 and len(files) <=100:
         processing.runalg('saga:mergelayers',entrada,True,True,out)
     elif len(files) ==1:
+        layer2=QgsVectorLayer(files[0],"entrada","ogr")
+        QgsMapLayerRegistry.instance().addMapLayers([layer2])
+        selection = layer2.getFeatures(QgsFeatureRequest().setFilterExpression(u'"DN" > 0'))
+        selecionado = layer2.setSelectedFeatures([s.id() for s in selection])
         processing.runalg("qgis:saveselectedfeatures",files[0],out)
     else:
         pass
